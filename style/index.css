@@ -1,75 +1,64 @@
+
 body, html{
     height: 100%;
     width:100%;
     padding:0;
     margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
 }
 body{
-    background-image: url(../img/12.jpg);
+    background-image: url(../img/backG.png);
     background-attachment: fixed;
     background-size: cover;
 } 
 header{
-    display: inline-block;
-    width:100%;
-    background: linear-gradient(rgba(99, 98, 98, 0.151), rgba(233, 230, 230, 0.151));
-    border-bottom-style: double;
-    border-width: medium;
-    border-color: #de9e48;
-}
-header p, h1, header i{
-    display:inline-block;
-    padding:1% 12% 1% 12%;
-    text-align:center;
-    color:rgb(202, 202, 202);
-    font-size: 20px;
-}
-main{
-    display:grid;
-    grid-template-rows: 80% 80% 80%;
-
-}
-.alg, .mat, .port{
-     display:grid;
-    grid-template-columns: 50% 50%; 
-    text-align:center;
-    background: rgba(65, 64, 64, 0.726);
-}
-.alg h1, .mat h1, .port h1{
-    font-size: 40px;
-    margin:  auto;
-    color:rgb(202, 202, 202);
- }
- main p{
-     margin:auto;
-     width:30%;
-     color:rgb(202, 202, 202);
- }
-.alg, .port, .mat{
-    border-bottom-style: solid;
-    border-color:#de9e48;
-    border-width: thin;
-}
- .submit{
-    width:10px;
-    height: 10px;
- }
- a{
-    text-decoration: none;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
     color:white;
-    padding:5%;
-    top:13%;
-    right:10%;
-    position: relative;
-    border-style: solid;
-    border-color:#de9e48;
-    border-width: thin;
-    transition:all  .3s ease;
- }
- a:hover{
-    background-color:#de9e48;
- }
+    font-family: 'Nunito', sans-serif;
+}
+header p{
+    font-size: 200%;
+    text-align:center;
+    width: 30%;
+}
+header li{
+    display: inline-block;
+    margin-right: 30%;
+}
+header a{
+    color:rgb(24, 112, 212)
+}
+a{
+    text-decoration: none;
+}
+header ul{
+    position: absolute;
+    width: 40%;
+    margin:auto;
+    right: 0%;
+    top:8%;
+    font-size: 150%;
+}
+.materias{
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    height: 60%;
+    margin-top:2%;  
+}
+.portugues, .matematica, .algoritmo{
+    border: thin solid black;
+    border-radius: 5px;
+    margin-left:20%;
+    margin-top:10%;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h1{
+    margin-left:20%;
+    font-size:50px;
+    height: 4%;
+    font-family: 'Merriweather Sans', sans-serif;
+}
 
-
- 
