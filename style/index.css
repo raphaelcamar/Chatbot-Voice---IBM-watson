@@ -49,6 +49,7 @@ header ul{
 }
 .portugues, .matematica, .algoritmo{
     border: thin solid black;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.534);
     border-radius: 5px;
     margin-left:20%;
     margin-top:10%;
