@@ -46,6 +46,7 @@ header ul{
     grid-template-columns: 25% 25% 25%;
     height: 60%;
     margin-top:2%;  
+    margin-left: 2%;    
 }
 .portugues, .matematica, .algoritmo{
     border: thin solid black;
@@ -61,5 +62,13 @@ h1{
     font-size:50px;
     height: 4%;
     font-family: 'Merriweather Sans', sans-serif;
+}
+img{
+    width: auto;
+    height: auto;
+}
+.card-deck{
+    width: 60%;
+    padding-left: 10%;
 }
 
