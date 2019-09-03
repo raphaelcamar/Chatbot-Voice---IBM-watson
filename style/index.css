@@ -4,12 +4,11 @@ body, html{
     width:100%;
     padding:0;
     margin:0;
-    overflow: hidden;
 }
 body{
     background-image: url(../img/backG.png);
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 100% 100%;
 } 
 header{
     width: 100%;
@@ -19,13 +18,16 @@ header{
     font-family: 'Nunito', sans-serif;
 }
 header p{
-    font-size: 200%;
-    text-align:center;
-    width: 30%;
+    font-size: 2em;
+    width: 100%;
+    margin-top:2%;
+    display: inline;
 }
-header li{
-    display: inline-block;
-    margin-right: 30%;
+.opcao{
+    padding-left: 25%;
+}
+#nome{
+    padding-left:10%;
 }
 header a{
     color:rgb(24, 112, 212)
@@ -33,42 +35,83 @@ header a{
 a{
     text-decoration: none;
 }
-header ul{
-    position: absolute;
-    width: 40%;
-    margin:auto;
-    right: 0%;
-    top:8%;
-    font-size: 150%;
+h1{
+    margin-left:15%;
+    margin-top:12%;
+    height: 4%;
+    font-family: 'Merriweather Sans', sans-serif;
+    width: 30%;
 }
-.materias{
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
-    height: 60%;
-    margin-top:2%;  
-    margin-left: 2%;    
+img{
+    height: 50%;
+    width: 100%;
 }
-.portugues, .matematica, .algoritmo{
+.card-deck{
+    width: 70%;
+    padding-left: 1%;
+    height: 40%;
+}
+.card{
     border: thin solid black;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.534);
     border-radius: 5px;
-    margin-left:20%;
+    margin-left:2%;
     margin-top:10%;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
 }
-h1{
-    margin-left:20%;
-    font-size:50px;
-    height: 4%;
-    font-family: 'Merriweather Sans', sans-serif;
+.chatbot{
+    background-image: url(../img/chatbot.jpg);
+    position:absolute;
+    width: 11%;
+    height: 15%;
+    background-size: 70%;
+    right: 2%;
+    bottom:2%;
+    background-repeat: no-repeat;
 }
-img{
-    width: auto;
-    height: auto;
-}
-.card-deck{
-    width: 60%;
-    padding-left: 10%;
-}
+.botao a{
 
+    padding:2%;
+    border-radius: 2px;
+}
+@media screen and (max-width: 768px) {
+    header p{
+       display: block;
+    }
+    .opcao, #nome{
+        padding:0;
+        font-size: 1.5em;
+        }
+   body{
+    background-image: url(../img/iphone.jpg);
+    background-attachment:initial;
+    background-size: 160%;
+} 
+.card-deck{
+    width: 70%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    width: auto;
+    height: 15%;
+    padding-top: 17%;
+}
+.chatbot{
+    position:absolute;
+    top:200%;
+    margin: 0 auto;
+    right: 40%;
+    margin-top: 10%;
+    bottom: 0;
+}
+}
+@media(min-height: 812px){
+.chatbot{
+    margin-top: 0;
+    position:absolute;
+    top:198%;
+}
+}
