@@ -15,10 +15,9 @@ inNome.addEventListener("input" , function(){
                         botao.classList.add('botao2');
                         botao.classList.remove('botao');
                         botao.disabled = false;
-                    }else{
+                 }else{
                         
-                    }
-
+          }
     });
 });
 

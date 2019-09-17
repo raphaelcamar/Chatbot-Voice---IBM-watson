@@ -45,10 +45,17 @@
             </div>
          </div>
       </div>
-      <a href="#">
-         <div class="chatbot">
+      <section class="chatbot">
+         <div class="chat"></div>
+         <input type="text" name="pergunta" id="pergunta" class="pergunta" placeholder="Tire sua dúvidas aqui!">
+         <div class="control">
+            <button id="enviarQ">Enviar</button>
+            <button id="enviarVoz">Enviar voz</button>
+            <button id="gravar">Gravar voz</button>
+            <button id="pausar" disabled>Pausar voz</button>
+            <button id="parar" disabled>Parar de gravar</button>
          </div>
-      </a>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+         </section>
+      <script src="script/EnviarQ.js"></script>
    </body>
 </html>
