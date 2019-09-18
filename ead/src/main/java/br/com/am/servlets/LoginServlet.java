@@ -1,6 +1,7 @@
 package br.com.am.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,7 @@ public class LoginServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+				PrintWriter out = resp.getWriter();
 		LoginDAO logindao = null;
 		Login login = new Login();
 		login.setRm(req.getParameter("rm"));
@@ -27,10 +28,13 @@ public class LoginServlet extends HttpServlet{
 		try {
 			logindao = new LoginDAO();
 			if(logindao.verificarLogin(login.getRm(), login.getSenha()) == true) {
-				resp.sendRedirect("index.html");
+				//resp.sendRedirect("index.html");
 					//adcionar cookies e session
+				out.println("Logado com sucesso!");
 			}else {
 				//código
+				out.println();
+				out.println("não logou");
 			}
 		}catch(Exception e){
 			e.printStackTrace();

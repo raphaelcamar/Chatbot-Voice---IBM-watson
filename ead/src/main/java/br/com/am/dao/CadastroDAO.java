@@ -18,22 +18,21 @@ public class CadastroDAO {
 	}
 	
 	//gerar ID para o banco
-	private static int ident = 1;
-	public int gerarID() {
-		return ident++;
-	}
-	
+
+
+
+
 	public int adcionar(Cadastro c)throws Exception {
 		pstmt = con.prepareStatement
 				("INSERT INTO AM_USUARIO (ID_USUARIO, NOME,SOBRENOME,EMAIL, RM, SENHA, RESPOSTASEGURANCA"+
-	") VALUES(?,?,?,?,?,?,?)");
-		pstmt.setInt(1, gerarID());
-		pstmt.setString(2, c.getNome());
-		pstmt.setString(3, c.getSobrenome());
-		pstmt.setString(4, c.getEmail());
-		pstmt.setString(5, c.getRm());
-		pstmt.setString(6, c.getSenha());
-		pstmt.setString(7, c.getRespostaSeguranca());
+	") VALUES(cadastro_seq.nextval, ?,?,?,?,?,?)");
+		//pstmt.setInt(1, cadastro_seq.intValue);
+		pstmt.setString(1, c.getNome());
+		pstmt.setString(2, c.getSobrenome());
+		pstmt.setString(3, c.getEmail());
+		pstmt.setString(4, c.getRm());
+		pstmt.setString(5, c.getSenha());
+		pstmt.setString(6, c.getRespostaSeguranca());
 		return pstmt.executeUpdate();	
 	}
 	
@@ -43,11 +42,11 @@ public class CadastroDAO {
 				("SELECT RM FROM AM_USUARIO where RM = ?");
 		pstmt.setString(1, rm);
 			rs = pstmt.executeQuery();
-			do {
-				if(rm.equals(rs.getString("RM"))) {
+			if(rs.next()) {
+				if(rs.getString("RM").equals(rm)) {
 					return false;
 				}
-			}while(rs.next());
+			}
 			return true;
 	}
 	public void Encerrar() throws Exception{
