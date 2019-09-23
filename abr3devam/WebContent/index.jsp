@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+   <%--  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>--%>
 <!DOCTYPE html>
 <html lang="pt-br">
+
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +17,8 @@
       <title>Fiap EAD</title>
    </head>
    <body>
+ <%--  <c:choose>--%>
+  <%-- 	<c:when test="${not empty l }">--%>
       <header>
          <p id="nome">Olá <%= session.getAttribute("nomeAluno") %>!</p>
               <p class="opcao"><a href="https://www2.fiap.com.br/"> Portal do aluno</a>   </p>
@@ -59,5 +63,19 @@
          </div>
          </section>
       <script src="script/EnviarQ.js"></script>
+    <%--   </c:when>
+      </c:choose>
+      <c:otherwise>
+      	<div class="n-logado">
+      		<p>Logue primeiro parater acesso ao conteúdo!!</p>
+      		</div>
+      		<div class="opcao-deslogado">
+      		<a href="login.jsp">Logar</a>
+      		<p>ou</p>
+      		<a href="cadastrar.jsp">Cadastre-se</a>
+      		</div>
+      	
+      </c:otherwise>
+      --%>
    </body>
 </html>

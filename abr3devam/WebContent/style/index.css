@@ -44,6 +44,14 @@ img{
     height: 50%;
     width: 100%;
 }
+.n-logado{
+	color:red;
+}
+.opcao-deslogado{
+	color:black;
+	witdh:100%;
+	text-align:center;
+}
 .card-deck{
     width: 70%;
     padding-left: 1%;

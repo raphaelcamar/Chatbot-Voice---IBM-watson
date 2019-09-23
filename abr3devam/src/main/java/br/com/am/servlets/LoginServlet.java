@@ -39,13 +39,14 @@ public class LoginServlet extends HttpServlet{
 				out.println("Usuário logado");
 				out.println(l.getNome());
 				HttpSession session = req.getSession();
+				session.setAttribute("logado", l);
 				session.setAttribute("nomeAluno", l.getNome());
 				RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 				dispatcher.forward(req, resp);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Não guardou no banco");
+			System.out.println("Não logou");
 		}finally {
 			try {
 			dao.encerrar();
