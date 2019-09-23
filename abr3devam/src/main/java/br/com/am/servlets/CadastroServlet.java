@@ -26,21 +26,19 @@ public class CadastroServlet extends HttpServlet {
 		Cadastro c = new Cadastro();
 		Rseguranca r = new Rseguranca();
 
-		r.setRseguranca(req.getParameter("rSeguranca"));
 		c.setNome(req.getParameter("nome"));
 		c.setSobrenome(req.getParameter("sobrenome"));
 		c.setEmail(req.getParameter("email"));
 		c.setRm(req.getParameter("rm"));
 		c.setSenha(req.getParameter("senha"));
-	
-
+		r.setRseguranca(req.getParameter("rseguranca"));
+		
 		CadastroDAO dao = null;
 		CadastroBO bo = new CadastroBO();
 		out.println("Você está na servlet certa");
 		try {
 			dao = new CadastroDAO();
-
-			dao.adcionarAluno(c);
+			
 			if (bo.validarNome(c.getNome()) == false) {
 				out.println("Nome incorreto!");
 			}
@@ -58,7 +56,8 @@ public class CadastroServlet extends HttpServlet {
 				out.println("Rm incorreto!");
 			}
 			if(bo.validarEmail(c.getEmail()) == true && bo.validarNome(c.getNome()) == true && bo.validarRM(c.getRm()) == true && bo.validarSenha(c.getSenha()) == true && bo.validarSobrenome(c.getSobrenome()) == true) {
-				
+				dao.adcionarAluno(c);
+				dao.adcionarResposta(r);
 			}
 		} catch (Exception e) {
 		e.printStackTrace();

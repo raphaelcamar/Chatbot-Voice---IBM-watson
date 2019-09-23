@@ -8,10 +8,8 @@ public class Cadastro {
 	private String senha;
 	private String rm;
 	private String email;
-	private Rseguranca rseguranca;
 
-	public Cadastro(int id_aluno, String nome, String sobrenome, String senha, String rm, String email,
-			Rseguranca rseguranca) {
+	public Cadastro(int id_aluno, String nome, String sobrenome, String senha, String rm, String email) {
 		super();
 		this.id_aluno = id_aluno;
 		this.nome = nome;
@@ -19,7 +17,6 @@ public class Cadastro {
 		this.senha = senha;
 		this.rm = rm;
 		this.email = email;
-		this.rseguranca = rseguranca;
 	}
 
 	public Cadastro() {
@@ -72,14 +69,6 @@ public class Cadastro {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Rseguranca getRseguranca() {
-		return rseguranca;
-	}
-
-	public void setRseguranca(Rseguranca rseguranca) {
-		this.rseguranca = rseguranca;
 	}
 
 }

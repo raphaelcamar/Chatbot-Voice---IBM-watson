@@ -2,34 +2,43 @@ package br.com.am.entities;
 
 public class Rseguranca {
 
-	private Long id_respostaSeg;
-	private String Rseguranca;
+	private int id_respostaSeg;
+	private String rseguranca;
+	private Cadastro cadastro;
+
+	public Rseguranca(int id_respostaSeg, String rseguranca, Cadastro cadastro) {
+		super();
+		this.id_respostaSeg = id_respostaSeg;
+		this.rseguranca = rseguranca;
+		this.cadastro = cadastro;
+	}
 
 	public Rseguranca() {
 		super();
 	}
 
-	public Rseguranca(Long id_respostaSeg, String rseguranca) {
-		super();
-		this.id_respostaSeg = id_respostaSeg;
-		Rseguranca = rseguranca;
-
-	}
-
-	public Long getId_respostaSeg() {
+	public int getId_respostaSeg() {
 		return id_respostaSeg;
 	}
 
-	public void setId_respostaSeg(Long id_respostaSeg) {
+	public void setId_respostaSeg(int id_respostaSeg) {
 		this.id_respostaSeg = id_respostaSeg;
 	}
 
 	public String getRseguranca() {
-		return Rseguranca;
+		return rseguranca;
 	}
 
 	public void setRseguranca(String rseguranca) {
-		Rseguranca = rseguranca;
+		this.rseguranca = rseguranca;
+	}
+
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
 	}
 
 }
