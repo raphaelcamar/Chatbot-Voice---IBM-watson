@@ -1,5 +1,9 @@
 package br.com.am.bo;
 
+import br.com.am.dao.CadastroDAO;
+import br.com.am.entities.Cadastro;
+import br.com.am.entities.Login;
+
 public class CadastroBO {
 
 	
@@ -66,5 +70,9 @@ public class CadastroBO {
 			return false;
 		}
 		return true;
+	}
+	
+	public Login validarLogin(String rm, String senha)throws Exception {
+		return new CadastroDAO().consultarUser(rm, senha);
 	}
 }

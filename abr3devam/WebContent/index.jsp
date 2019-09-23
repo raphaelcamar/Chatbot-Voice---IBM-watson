@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
@@ -14,7 +16,7 @@
    </head>
    <body>
       <header>
-         <p id="nome">Nome</p>
+         <p id="nome">Ol· <%= session.getAttribute("nomeAluno") %>!</p>
               <p class="opcao"><a href="https://www2.fiap.com.br/"> Portal do aluno</a>   </p>
               <p class="opcao"><a href="">Sair</a></p>
       </header>
@@ -24,7 +26,7 @@
             <img src="img/algoritmo.jpg" class="card-img-top " alt="...">
             <div class="card-body">
                <h5 class="card-title">Algoritimo   </h5>
-               <p class="card-text">EAD focado em ajudar oferecer apoio √† mat√©ria de algoritmo</p>
+               <p class="card-text">EAD focado em ajudar oferecer apoio ‡ matÈria de algoritmo</p>
                <p class="botao"><a href="#">Conteudo</a></p>
             </div>
          </div>
@@ -32,7 +34,7 @@
             <img src="img/portugues.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                <h5 class="card-title">Portugues</h5>
-               <p class="card-text">EAD focado em passar conhecimentos de neg√≥cio</p>
+               <p class="card-text">EAD focado em passar conhecimentos de negÛcio</p>
                <p class="botao"><a href="#">Conteudo</a></p>
             </div>
          </div>
@@ -40,14 +42,14 @@
             <img src="img/mat.jpg"class="card-img-top" alt="...">
             <div class="card-body">
                <h5 class="card-title">Matematica</h5>
-               <p class="card-text">EAD focado em fortalecer alguns conceitos matem√°ticos</p>
+               <p class="card-text">EAD focado em fortalecer alguns conceitos matem·ticos</p>
                <p class="botao"><a href="#">Conteudo</a></p>
             </div>
          </div>
       </div>
       <section class="chatbot">
          <div class="chat"></div>
-         <input type="text" name="pergunta" id="pergunta" class="pergunta" placeholder="Tire sua d√∫vidas aqui!">
+         <input type="text" name="pergunta" id="pergunta" class="pergunta" placeholder="Tire sua d˙vidas aqui!">
          <div class="control">
             <button id="enviarQ">Enviar</button>
             <button id="enviarVoz">Enviar voz</button>

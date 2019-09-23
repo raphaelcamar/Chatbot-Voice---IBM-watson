@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +22,7 @@
             <input type="email" name="email"  class="input" placeholder="Digite seu Email" />
             <input type="text" name="rm"  class="input" placeholder="Digite seu RM" />
             <input type="password" name="senha" class="input" placeholder="Digite sua senha"/>
-            <p class="question">Qual Ã© seu filme favorito?</p>
+            <p class="question">Qual é seu filme favorito?</p>
             <input type="text" name="rSeguranca"  class="input" placeholder="Resposta da Pergunta" />
             <button class="botao">Login</button>
         </form>

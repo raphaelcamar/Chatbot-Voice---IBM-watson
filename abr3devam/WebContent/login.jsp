@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +21,7 @@
             <input type="password" name="senha" class="input input3" placeholder="&#xf023; Digite sua senha"/>
             <button class="botao">Login</button>
         </form>
-        <p> NÃ£o possui uma conta?<a href="cadastro.html"> Cadastre-se</a></p>
+        <p> Não possui uma conta?<a href="cadastro.jsp"> Cadastre-se</a></p>
         <p>Esqueceu sua senha? <a href=""> Clique aqui</a></p>
     </div>
     <script src="js/login.js"></script>

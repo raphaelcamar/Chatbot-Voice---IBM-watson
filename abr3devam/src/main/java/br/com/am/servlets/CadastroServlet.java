@@ -35,12 +35,13 @@ public class CadastroServlet extends HttpServlet {
 	
 
 		CadastroDAO dao = null;
-		CadastroBO bo = new CadastroBO();
+		
 		out.println("Você está na servlet certa");
 		try {
+			CadastroBO bo = new CadastroBO();
 			dao = new CadastroDAO();
 
-			dao.adcionarAluno(c);
+			
 			if (bo.validarNome(c.getNome()) == false) {
 				out.println("Nome incorreto!");
 			}
@@ -57,16 +58,20 @@ public class CadastroServlet extends HttpServlet {
 			if (bo.validarRM(c.getRm()) == false) {
 				out.println("Rm incorreto!");
 			}
-			if(bo.validarEmail(c.getEmail()) == true && bo.validarNome(c.getNome()) == true && bo.validarRM(c.getRm()) == true && bo.validarSenha(c.getSenha()) == true && bo.validarSobrenome(c.getSobrenome()) == true) {
-				
+			if(bo.validarNome(c.getNome()) == true && bo.validarEmail(c.getEmail()) == true && bo.validarRM(c.getRm()) == true && bo.validarSenha(c.getSenha()) == true) {
+				dao.adcionarAluno(c);
+				dao.adcionarResposta(r);
 			}
+			
 		} catch (Exception e) {
 		e.printStackTrace();
+		System.out.println("não guardou no banco");
 		} finally {
 			try {
 				dao.encerrar();
 			} catch (Exception e) {
 				e.printStackTrace();
+				System.out.println("não conseguiu encerrar!");
 			}
  		}
 
