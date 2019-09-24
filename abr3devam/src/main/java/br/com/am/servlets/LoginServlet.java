@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet{
 		try {
 			Login l = new LoginBO().validarUser(rm, senha);
 			dao = new CadastroDAO();
+			String erro = "";
 		
 			if(l != null) {
 				out.println("Usuário logado");
@@ -42,6 +43,12 @@ public class LoginServlet extends HttpServlet{
 				session.setAttribute("logado", l);
 				session.setAttribute("nomeAluno", l.getNome());
 				RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+				dispatcher.forward(req, resp);
+			}else{
+				erro = "abc";
+				HttpSession session = req.getSession();
+				session.setAttribute("erroLogin", erro );
+				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
 				dispatcher.forward(req, resp);
 			}
 		}catch(Exception e) {

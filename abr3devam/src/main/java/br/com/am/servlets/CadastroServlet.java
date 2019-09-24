@@ -3,6 +3,7 @@ package br.com.am.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +37,7 @@ public class CadastroServlet extends HttpServlet {
 
 		CadastroDAO dao = null;
 		
-		out.println("Você está na servlet certa");
+		
 		try {
 			CadastroBO bo = new CadastroBO();
 			dao = new CadastroDAO();
@@ -61,6 +62,7 @@ public class CadastroServlet extends HttpServlet {
 			if(bo.validarNome(c.getNome()) == true && bo.validarEmail(c.getEmail()) == true && bo.validarRM(c.getRm()) == true && bo.validarSenha(c.getSenha()) == true) {
 				dao.adcionarAluno(c);
 				dao.adcionarResposta(r);
+				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
 			}
 			
 		} catch (Exception e) {

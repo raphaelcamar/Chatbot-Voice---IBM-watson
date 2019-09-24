@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,9 +13,19 @@
     <title>Fiap-ON login</title>
 </head>
 <body>
+	<c:choose>
+		<c:when test="${not empty erroLogin}">
+		 <p>Usuário ou senha inválidos</p>
+		</c:when>
+		</c:choose>
     <div class="img">
         <img src="img/on.jpg" alt="" width="60%" height="40%">
     </div>
+    <div class="user-inexistente">
+  
+
+    </div>
+
     <div class="form">
         <form action="logar" method="POST" name="formulario">
             <input type="text" name="rm"  class="input input2" placeholder="&#xf007; RM" />
@@ -22,8 +33,9 @@
             <button class="botao">Login</button>
         </form>
         <p> Não possui uma conta?<a href="cadastro.jsp"> Cadastre-se</a></p>
-        <p>Esqueceu sua senha? <a href=""> Clique aqui</a></p>
+        <p>Esqueceu sua senha? <a href="recuperarSenha.jsp"> Clique aqui</a></p>
     </div>
     <script src="js/login.js"></script>
+
 </body>
 </html>
