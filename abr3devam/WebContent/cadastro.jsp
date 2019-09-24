@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,9 +13,14 @@
     <title>Fiap-ON Cadastro</title>
 </head>
 <body>
+
     <div class="img">
         <img src="img/on.jpg" alt="" width="60%" height="40%">
     </div>
+   <c:forEach var="erro" items="${erro }">
+   <p>${erro }</p>
+   
+   </c:forEach>
     <div class="form">
         <form action="cadastrar" method="POST" name="formulario">
             <input type="text" name="nome"  class="input" placeholder="Digite seu nome" />
@@ -28,5 +34,6 @@
         </form>
     </div>
     <!-- <script src="script/login.js"></script> -->
+    
 </body>
 </html>

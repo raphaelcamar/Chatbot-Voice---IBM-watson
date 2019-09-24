@@ -8,13 +8,12 @@ public class CadastroBO {
 
 	
 	public boolean validarNome(String nome) {
-		//não deixar o usuário digitar caracter especial
+
 		for (int i = 0; i < nome.length(); i++) {
 			if(!Character.isAlphabetic(nome.charAt(i))) {
 				return false;
 			}
 		}
-		//não deixa ultrapassar o tamanho do banco
 		if(nome.length() > 30) {
 			return false;
 		}
@@ -55,7 +54,7 @@ public class CadastroBO {
 	}
 	
 	public boolean validarEmail(String email) {
-		if(!email.contains("@")) {
+		if(!email.contains("@") || !email.contains(".")) {
 			return false;
 		}
 		

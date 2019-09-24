@@ -6,6 +6,7 @@ public class TestarConexao {
 
 	public static void main(String[] args) {
 		Connection produtoConexao = null;
+		
 		try {
 			produtoConexao = Conexao.produtoConexao();
 			System.out.println("Conectou");

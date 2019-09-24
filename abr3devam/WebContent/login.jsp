@@ -12,30 +12,31 @@
     <link rel="stylesheet" href="style/login.css">
     <title>Fiap-ON login</title>
 </head>
+
 <body>
-	<c:choose>
+<c:choose>
 		<c:when test="${not empty erroLogin}">
 		 <p>Usuário ou senha inválidos</p>
 		</c:when>
 		</c:choose>
-    <div class="img">
-        <img src="img/on.jpg" alt="" width="60%" height="40%">
-    </div>
-    <div class="user-inexistente">
-  
-
-    </div>
-
     <div class="form">
-        <form action="logar" method="POST" name="formulario">
-            <input type="text" name="rm"  class="input input2" placeholder="&#xf007; RM" />
-            <input type="password" name="senha" class="input input3" placeholder="&#xf023; Digite sua senha"/>
-            <button class="botao">Login</button>
-        </form>
-        <p> Não possui uma conta?<a href="cadastro.jsp"> Cadastre-se</a></p>
-        <p>Esqueceu sua senha? <a href="recuperarSenha.jsp"> Clique aqui</a></p>
+	    
+	    <div class="img">
+	        <img src="img/on.jpg" alt="On">
+	    </div>
+	    
+	    <div class="form-bg"> 
+		    <form action="logar" method="POST" name="formulario">
+	            <input type="number" name="rm"  class="input input2" placeholder="&#xf007; RM" required />
+	            <input type="password" maxlength="6" name="senha" class="input input3" placeholder="&#xf023; Digite sua senha" required/>
+	            <button class="botao">Login</button>
+	        </form>
+	        
+	        <p> Não possui uma conta?<a href="cadastro.jsp"> Cadastre-se</a></p>
+	        <p>Esqueceu sua senha? <a href=""> Clique aqui</a></p>
+	    </div>
     </div>
     <script src="js/login.js"></script>
-
+</body>
 </body>
 </html>

@@ -2,6 +2,7 @@ package br.com.am.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,8 +23,6 @@ public class CadastroServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter out = resp.getWriter();
-
 		Cadastro c = new Cadastro();
 		Rseguranca r = new Rseguranca();
 
@@ -39,30 +38,37 @@ public class CadastroServlet extends HttpServlet {
 		
 		
 		try {
+			
+			ArrayList<String> erro = new ArrayList<String>();
 			CadastroBO bo = new CadastroBO();
 			dao = new CadastroDAO();
 
 			
 			if (bo.validarNome(c.getNome()) == false) {
-				out.println("Nome incorreto!");
+				erro.add("O nome deverá conter apenas letras");
 			}
 			if (bo.validarSobrenome(c.getSobrenome()) == false) {
-				out.println("Sobrenome incorreto!");
+				erro.add("O sobrenome deverá conter apenas letras, ");
 			}
 			if (bo.validarSenha(c.getSenha()) == false) {
-				out.println("Senha inválida!");
+				erro.add("A senha deverá conter APENAS seis (6) caracteres!");
 			}
 			if (bo.validarEmail(c.getEmail()) == false) {
-				out.println("E-mail incorreto!");
+				erro.add("O e-mail deverá ser válido!");
 			}
 
 			if (bo.validarRM(c.getRm()) == false) {
-				out.println("Rm incorreto!");
+				erro.add("O rm deverá conter APENAS números e conter cinco (5) caracteres");
 			}
 			if(bo.validarNome(c.getNome()) == true && bo.validarEmail(c.getEmail()) == true && bo.validarRM(c.getRm()) == true && bo.validarSenha(c.getSenha()) == true) {
 				dao.adcionarAluno(c);
 				dao.adcionarResposta(r);
 				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
+				dispatcher.forward(req, resp);
+			}if(bo.validarNome(c.getNome()) == false || bo.validarEmail(c.getEmail()) == false || bo.validarRM(c.getRm()) == false || bo.validarSenha(c.getSenha()) == false) {
+				req.setAttribute("erro", erro );
+				RequestDispatcher dispatcher = req.getRequestDispatcher("cadastro.jsp");
+				dispatcher.forward(req, resp);
 			}
 			
 		} catch (Exception e) {

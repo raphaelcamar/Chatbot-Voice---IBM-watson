@@ -1,40 +1,54 @@
-*{
+
+* {
     padding:0;
     margin:0;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
 }
+
 body{
     background-image: url("../img/login2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
 
 }
-.img{
-position:absolute;
-top:20%;
-left:58%;
-transform: translate(-50%, -50%);
+
+.form {
+    width: 320px;
+    max-width: 90vw;
+    margin: 0 auto;
 }
-.form{
-position:absolute;
-top:60%;
-left:50%;
-transform: translate(-50%, -50%);
-width: 22%;
-height: 60%;
-background: rgba(65, 64, 64, 0.774);
-border-style: none;
-border-radius: 3px;
-box-shadow: 1px 2px rgba(44, 44, 44, 0.459);
-font-style: bold;
-margin: 0 auto;
+.form .img {
+    margin: 30px 0;
+}
+.form .form-bg {
+    background: rgba(65, 64, 64, 0.774);
+    border-style: none;
+    border-radius: 3px;
+    box-shadow: 1px 2px rgba(44, 44, 44, 0.459);
 }
 
 .input{
     position:relative;
     border:0 none;
+    outline: none;
     margin-left: 3%;
     border-bottom: 3px solid #B82601;
     border-radius: 3px;
@@ -45,20 +59,21 @@ margin: 0 auto;
     margin-top:15%;
     font-family: "FontAwesome", Open Sans, Arial;
     font-size: 100%;
-    color: rgb(172, 169, 169);
+    color: #fff;
 }
 .botao{
-    margin-top: 10%;
-   margin-left:30%;
-   padding:5% 13% 5% 13%;
-   background: rgb(160, 159, 159);
-   border-style: none;
-   border-radius: 2px;
-   color:rgb(114, 110, 110);
-   font-weight:200;
-   margin-bottom: 8%;
-   transition: all ease-out 0.3s;
-  
+    padding:5% 13% 5% 13%;
+    background: #fff;
+    border-style: none;
+    border-radius: 2px;
+    color: #565656;
+    margin-bottom: 20px;
+    transition: all ease-out 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
 .botao2{
     margin-top: 10%;
@@ -81,7 +96,8 @@ margin: 0 auto;
     padding-bottom: 5%;
     padding-left: 5%;
     text-decoration: none;
-    color: rgb(133, 129, 129);
+    color: #fff;
+    font-size: 12px;
 }
 .form p a{
     text-decoration: none;
@@ -91,33 +107,9 @@ margin: 0 auto;
 .form p a:hover{
     text-decoration: underline;
 }
-.nomeL{
+input.valid{
     border-bottom: 3px solid rgb(1, 184, 1);
     transition: all ease-out 0.3s;
 }
-@media(max-width: 768px){
-    .form{
-        width: 90%;
-        }
-        .img{
-            width: 100%;
-            left:69%;
-        }
-}
- @media screen and (min-height:1024px){
-    .form{
-        width: 70%;
-        height: 70%;
-        left:50%;
-        top:60%;
-        }
-        .img{
-            top: 15%;
-            width:80%;
-            left: 63%;
-        }
-        *{
-            font-size: 30px;
-        }
-} 
+
 
