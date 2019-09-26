@@ -1,0 +1,123 @@
+*{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-image: url("../img/login2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.img{
+    width: 20%;
+    height: 50%;
+}
+.form{
+
+width: 22%;
+height: 60%;
+background: rgba(65, 64, 64, 0.774);
+border-style: none;
+border-radius: 3px;
+box-shadow: 1px 2px rgba(44, 44, 44, 0.459);
+font-style: bold;
+margin: 0 auto;
+}
+
+.input{
+    position:relative;
+    border:0 none;
+    margin-left: 3%;
+    border-bottom: 3px solid #B82601;
+    border-radius: 3px;
+    width: 90%;
+    padding:2% 2%5% 2%;
+    margin-bottom:5%;
+    background-color: transparent;
+    margin-top:15%;
+    font-family: "FontAwesome", Open Sans, Arial;
+    font-size: 100%;
+    color: rgb(253, 251, 251);
+}
+.botao{
+    margin-top: 10%;
+   margin-left:30%;
+   padding:5% 13% 5% 13%;
+   background: rgb(160, 159, 159);
+   border-style: none;
+   border-radius: 2px;
+   color:rgb(114, 110, 110);
+   font-weight:200;
+   margin-bottom: 8%;
+   transition: all ease-out 0.3s;
+  
+}
+.botao2{
+    margin-top: 10%;
+   margin-left:30%;
+   padding:5% 13% 5% 13%;
+   background: rgb(1, 184, 1);
+   border-style: none;
+   border-radius: 2px;
+   cursor:pointer;
+   color:white;
+   font-weight:bold;
+   margin-bottom: 8%;;
+   transition: all ease-out 0.3s;
+   box-shadow:none !important;
+}
+.question{
+    color:white !important;;
+    font-weight: bolder;
+    text-align: center;
+}
+.botao:focus{
+   box-shadow: none !important;
+}
+.form p{
+    padding-bottom: 5%;
+    padding-left: 5%;
+    text-decoration: none;
+    color: rgb(133, 129, 129);
+}
+.form p a{
+    text-decoration: none;
+    color: rgb(184, 180, 180);
+    font-weight: bold;
+}
+.form p a:hover{
+    text-decoration: underline;
+}
+.nomeL{
+    border-bottom: 3px solid rgb(1, 184, 1);
+    transition: all ease-out 0.3s;
+}
+@media(max-width: 768px){
+    .form{
+        width: 90%;
+        }
+        .img{
+            width: 100%;
+            left:69%;
+        }
+}
+ @media screen and (min-height:1024px){
+    .form{
+        width: 70%;
+        height: 70%;
+        left:50%;
+        top:60%;
+        }
+        .img{
+            top: 15%;
+            width:80%;
+            left: 63%;
+        }
+        *{
+            font-size: 30px;
+        }
+} 
+
