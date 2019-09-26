@@ -18,10 +18,7 @@ public class RecuperarSenhaDAO {
 		con = Conexao.produtoConexao();
 	}
 	
-//	public Rseguranca recuperarSenha(String rm, String resposta)throws Exception{
-//		
-//		stmt= con.prepareStatement("select )";
-//	}
+	
 	
 	
 	

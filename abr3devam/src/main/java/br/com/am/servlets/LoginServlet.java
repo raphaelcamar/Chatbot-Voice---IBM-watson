@@ -22,9 +22,9 @@ public class LoginServlet extends HttpServlet{
 
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp){
 		
-		PrintWriter out = resp.getWriter();
+	
 		CadastroDAO dao = null;
 		
 		String rm = req.getParameter("rm");
@@ -37,15 +37,13 @@ public class LoginServlet extends HttpServlet{
 			String erro = "";
 		
 			if(l != null) {
-				out.println("Usuário logado");
-				out.println(l.getNome());
 				HttpSession session = req.getSession();
 				session.setAttribute("logado", l);
 				session.setAttribute("nomeAluno", l.getNome());
 				RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 				dispatcher.forward(req, resp);
 			}else{
-				erro = "abc";
+				erro = "erro";
 				HttpSession session = req.getSession();
 				session.setAttribute("erroLogin", erro );
 				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");

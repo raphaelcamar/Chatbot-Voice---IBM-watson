@@ -16,10 +16,14 @@ public class LogoutServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void service(HttpServletRequest req, HttpServletResponse resp){
 		HttpSession session = req.getSession();
 		session.invalidate();
+		try {
+			req.getRequestDispatcher("login.jsp").forward(req, resp);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
-		req.getRequestDispatcher("login.jsp").forward(req, resp);
 	}
 }

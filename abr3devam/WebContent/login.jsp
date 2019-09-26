@@ -33,7 +33,7 @@
 	        </form>
 	        
 	        <p> Não possui uma conta?<a href="cadastro.jsp"> Cadastre-se</a></p>
-	        <p>Esqueceu sua senha? <a href=""> Clique aqui</a></p>
+	        <p>Esqueceu sua senha? <a href="recuperarSenha.jsp"> Clique aqui</a></p>
 	    </div>
     </div>
     <script src="js/login.js"></script>

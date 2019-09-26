@@ -6,7 +6,7 @@ body, html{
     margin:0;
 }
 body{
-    background-image: url(../img/backG.png);
+     background-image: url(../img/backG.png);
     background-attachment: fixed;
     background-size: 100% 100%;
 } 

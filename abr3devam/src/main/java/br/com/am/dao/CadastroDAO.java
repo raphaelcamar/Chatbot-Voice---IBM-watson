@@ -6,14 +6,15 @@ import java.sql.ResultSet;
 
 import br.com.am.conexao.Conexao;
 import br.com.am.entities.Cadastro;
-import br.com.am.entities.Login;
 import br.com.am.entities.Rseguranca;
+import br.com.am.entities.UserExistente;
 
 public class CadastroDAO {
 
 	private Connection con;
 	private PreparedStatement stmt;
 	private ResultSet rs;
+
 	
 	public CadastroDAO()throws Exception{
 		con = Conexao.produtoConexao();
@@ -44,22 +45,41 @@ public class CadastroDAO {
 		
 	}
 	
-	public Login consultarUser(String rm, String senha)throws Exception {
-		Login l = null;
-		stmt = con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE RM = ? AND SENHA = ?");
+	public UserExistente VerificarRm(String rm)throws Exception {
+		UserExistente ue = null;
+		
+		stmt= con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE RM =?");
 		
 		stmt.setString(1, rm);
-		stmt.setString(2, senha);
+		
 		
 		rs = stmt.executeQuery();
 		
 		if(rs.next()) {
-			String rmL = rs.getString("RM");
-			String senhaL = rs.getString("SENHA");
-			String nome = rs.getString("NOME");
-			l = new Login(rmL, senhaL, nome);
+			String rm2 = rs.getString("RM");
+			String email2 = rs.getString("EMAIL");
+			 ue = new UserExistente(rm2, email2);
 		}
-		return l;
+		
+		return ue;
 	}
+	
+	public UserExistente verificarEmail(String email)throws Exception{
+		UserExistente ue = null;
+		stmt = con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE EMAIL =?");
+		stmt.setString(1, email);
+		
+		rs = stmt.executeQuery();
+		
+		if(rs.next()) {
+			String email2 = rs.getString("EMAIL");
+			String rm = rs.getString("RM");
+			ue = new UserExistente(rm, email2);
+			
+		}
+		return ue;
+	}
+	
+	
 	
 }
