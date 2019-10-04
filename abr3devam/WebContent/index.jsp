@@ -29,6 +29,7 @@
 <body>
 	<c:choose>
 		<c:when test="${logado != null }">
+		<a href="conteudo.jsp">chatbot</a>
 			<header>
 				<p id="nome">
 					Olá
@@ -77,19 +78,6 @@
 					</div>
 				</div>
 			</div>
-			<section class="chatbot">
-				<div class="chat"></div>
-				<input type="text" name="pergunta" id="pergunta" class="pergunta"
-					placeholder="Tire sua dúvidas aqui!">
-				<div class="control">
-					<button id="enviarQ">Enviar</button>
-					<button id="enviarVoz">Enviar voz</button>
-					<button id="gravar">Gravar voz</button>
-					<button id="pausar" disabled>Pausar voz</button>
-					<button id="parar" disabled>Parar de gravar</button>
-				</div>
-			</section>
-			<script src="script/EnviarQ.js"></script>
 		</c:when>
 
 		<c:otherwise>

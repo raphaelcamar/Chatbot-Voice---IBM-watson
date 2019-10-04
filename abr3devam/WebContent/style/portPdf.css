@@ -1,0 +1,113 @@
+html,body {
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.iframe {
+    height: 100%;
+    z-index: -1;
+}
+
+.chatbot {
+    z-index: 2;
+    position: fixed;
+    bottom: 50px;
+    left: -100%;
+    width: 450px;
+    height: 300px;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  	padding: 10px;
+  	transition: all 300ms ease;
+}
+.chatbot-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-family: sans-serif;
+	cursor: pointer;
+	z-index: 9;
+}
+.chatbot.is--active {
+	left: 50px;
+}
+
+.chat-container {
+    width: 97%;
+    height: 230px;
+    margin-top: 20px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 5px;
+    height: 90%;
+    margin-top: 5%;
+}
+ 
+.chat-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #000;
+  outline: none;
+}
+
+.chat-container .resposta {
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px 0;
+}
+
+.icon-chat {
+	position: fixed;
+	left: 50px;
+	bottom: 50px;
+	background-color: #333;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+#recordButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#recordButton span {
+	transition: all 300ms ease;
+}
+
+#recordButton .stop {
+	display: none;
+}
+
+#recordButton.is--recording .record {
+	display: none;
+}
+
+#recordButton.is--recording .stop {
+	display: block;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
