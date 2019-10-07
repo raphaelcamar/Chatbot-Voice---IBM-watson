@@ -1,6 +1,6 @@
 package br.com.am.bo;
 
-import br.com.am.dao.CadastroDAO;
+import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.UserExistente;
 
 public class CadastroBO {
@@ -49,6 +49,9 @@ public class CadastroBO {
 		if(resposta.length() > 50) {
 			return false;
 		}
+		if(resposta.isEmpty()) {
+			return false;
+		}
 		return true;
 	}
 	
@@ -70,11 +73,13 @@ public class CadastroBO {
 		return true;
 	}
 	
+
+	
 	public UserExistente RmExistente(String rm)throws Exception {
-		return new CadastroDAO().VerificarRm(rm);
+		return new AlunoDAO().VerificarRm(rm);
 	}
 	
 	public UserExistente EmailExistente(String email)throws Exception{
-		return new CadastroDAO().verificarEmail(email);
+		return new AlunoDAO().verificarEmail(email);
 		}
 }

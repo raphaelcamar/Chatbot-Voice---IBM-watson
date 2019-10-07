@@ -9,14 +9,14 @@ import br.com.am.entities.Cadastro;
 import br.com.am.entities.Rseguranca;
 import br.com.am.entities.UserExistente;
 
-public class CadastroDAO {
+public class AlunoDAO {
 
 	private Connection con;
 	private PreparedStatement stmt;
 	private ResultSet rs;
 
 	
-	public CadastroDAO()throws Exception{
+	public AlunoDAO()throws Exception{
 		con = Conexao.produtoConexao();
 	}
 	

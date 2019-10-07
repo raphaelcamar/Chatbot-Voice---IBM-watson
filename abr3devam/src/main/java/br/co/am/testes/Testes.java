@@ -1,23 +1,31 @@
 package br.co.am.testes;
 
 import br.com.am.bo.CadastroBO;
-import br.com.am.dao.CadastroDAO;
+import br.com.am.dao.AlunoDAO;
+import br.com.am.dao.RecuperarSenhaDAO;
 
 public class Testes {
 
 	public static void main(String[] args) {
 		
-		CadastroDAO dao = null;
+		RecuperarSenhaDAO rsenha = null;
 		try {
-			dao = new CadastroDAO();
-			
+			 rsenha = new RecuperarSenhaDAO();
 			CadastroBO bo = new CadastroBO();
-			bo.RmExistente("83088", "raphaelcamar@outlook.com");
+			
+			String retorno = rsenha.retornarRSeguranca("andre@gmail.com");
+			//System.out.println(retorno);
+			if(retorno.equalsIgnoreCase("mumia")) {
+				System.out.println(retorno);
+				System.out.println(rsenha.retornaID("andraae@gmail.com"));
+			}else {
+				System.out.println("n");
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
 			try {
-				dao.encerrar();
+				rsenha.encerrar();
 			}catch(Exception e){
 				e.printStackTrace();
 			}

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,23 +17,37 @@
     <div class="img">
         <img src="img/on.jpg" alt="" width="60%" height="40%">
     </div>
-   <c:forEach var="erro" items="${erro }">
+    <c:forEach var="erro" items="${erro }">
    <p>${erro }</p>
    
-   </c:forEach>
-    <div class="form">
-        <form action="cadastrar" method="POST" name="formulario">
-            <input type="text" name="nome"  class="input" placeholder="Digite seu nome" />
-            <input type="text" name="sobrenome"  class="input" placeholder="Digite seu segundo nome" />
-            <input type="email" name="email"  class="input" placeholder="Digite seu Email" />
-            <input type="text" name="rm"  class="input" placeholder="Digite seu RM" />
-            <input type="password" name="senha" class="input" placeholder="Digite sua senha"/>
-            <p class="question">Qual é seu filme favorito?</p>
+   </c:forEach> 
+   <h1>Cadastro</h1>
+   <section class="container">
+   <div class="form">
+        <form action="#" method="POST" name="formulario">
+            <label>Nome:
+            <input type="text" name="nome"  class="input" placeholder="nome" />
+        </label>
+        <label>Sobrenome:
+            <input type="text" name="sobrenome"  class="input" placeholder="segundo nome" />
+        </label>
+        <label>E-mail:
+            <input type="email" name="email"  class="input" placeholder="Email" />
+        </label>
+        <label>RM:
+            <input type="text" name="rm"  class="input" placeholder="RM" />
+        </label>
+        <label>Senha:
+            <input type="password" name="senha" class="input" placeholder="senha"/>
+        </label>
+            <label> <p class="question">Qual é seu filme favorito?</p>
             <input type="text" name="rSeguranca"  class="input" placeholder="Resposta da Pergunta" />
-            <button class="botao">Login</button>
+        </label>
+            <button class="botao">Cadastre-se</button>
         </form>
     </div>
-    <!-- <script src="script/login.js"></script> -->
-    
+</section>
+     <script src="script/login.js"></script> 
+    <script src="js/cadastro.html"></script>
 </body>
 </html>

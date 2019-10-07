@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.am.bo.CadastroBO;
-import br.com.am.dao.CadastroDAO;
+import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.Cadastro;
 import br.com.am.entities.Rseguranca;
 import br.com.am.entities.UserExistente;
@@ -32,14 +32,14 @@ public class CadastroServlet extends HttpServlet {
 		c.setSenha(req.getParameter("senha"));
 	
 
-		CadastroDAO dao = null;
+		AlunoDAO dao = null;
 		
 		try {
 			UserExistente ue = new CadastroBO().RmExistente(c.getRm());
 			UserExistente ue2 = new CadastroBO().EmailExistente(c.getEmail());
 			ArrayList<String> erro = new ArrayList<String>();
 			CadastroBO bo = new CadastroBO();
-			dao = new CadastroDAO();
+			dao = new AlunoDAO();
 
 			
 			if (bo.validarNome(c.getNome()) == false) {

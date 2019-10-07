@@ -1,12 +1,18 @@
 package br.com.am.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import br.com.am.bo.CadastroBO;
+import br.com.am.dao.RecuperarSenhaDAO;
 
 @WebServlet(urlPatterns = "/recuperarSenha")
 public class RecuperarSenha extends HttpServlet{
@@ -17,9 +23,48 @@ public class RecuperarSenha extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		
-		req.getParameter("filme");
-		req.getParameter("email");
+		String filme = req.getParameter("filme");
+		String email = req.getParameter("email");
+		String novaSenha = req.getParameter("novaSenha");
+		ArrayList<String> erros = new ArrayList<String>();
 		
+		RecuperarSenhaDAO rsenha = null;
+		
+		try {
+			 rsenha = new RecuperarSenhaDAO();
+			 	int id = rsenha.retornaID(email);
+			 	CadastroBO bo = new CadastroBO();
+			 	
+			 	String retorno = rsenha.retornarRSeguranca(email);
+			 	if(retorno == null) {
+			 		erros.add( "E-mail não cadastrado!");
+			 	}else
+					if(retorno.equals(filme)) {
+						if(bo.validarSenha(novaSenha) == false) {
+							erros.add("Senha incorreta");
+						}else {
+							rsenha.novaSenha(id, novaSenha);
+								String msg = "Mudado com sucesso!";
+									req.setAttribute("valor", msg);
+										RequestDispatcher dispatcher = req.getRequestDispatcher("recuperarSenha.jsp");
+											dispatcher.forward(req, resp);
+						}
+						
+					} else {
+						erros.add("e-mail ou resposta incorreta! Digite novamente");
+					}
+			 	req.setAttribute("erro", erros);
+			 		RequestDispatcher dispatcher = req.getRequestDispatcher("recuperarSenha.jsp");
+			 			dispatcher.forward(req, resp);
+	}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				rsenha.encerrar();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		
 	}
 }

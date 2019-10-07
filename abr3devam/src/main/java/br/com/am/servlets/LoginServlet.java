@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.am.bo.LoginBO;
-import br.com.am.dao.CadastroDAO;
+import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.Login;
 
 @WebServlet(urlPatterns = "/logar")
@@ -23,25 +23,23 @@ public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp){
-		
 	
-		CadastroDAO dao = null;
+		AlunoDAO dao = null;
 		
 		String rm = req.getParameter("rm");
 		String senha = req.getParameter("senha");
 		
-		
 		try {
 			Login l = new LoginBO().validarUser(rm, senha);
-			dao = new CadastroDAO();
+			dao = new AlunoDAO();
 			String erro = "";
 		
 			if(l != null) {
 				HttpSession session = req.getSession();
 				session.setAttribute("logado", l);
-				session.setAttribute("nomeAluno", l.getNome());
-				RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-				dispatcher.forward(req, resp);
+					session.setAttribute("nomeAluno", l.getNome());
+						RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+								dispatcher.forward(req, resp);
 			}else{
 				erro = "erro";
 				HttpSession session = req.getSession();
