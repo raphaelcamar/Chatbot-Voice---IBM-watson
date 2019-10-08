@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +37,7 @@
         <label>Senha:
             <input type="password" name="senha" class="input" placeholder="senha"required/>
         </label>
-            <label> <p class="question">Qual é seu filme favorito?</p>
+            <label> <p class="question">Qual ï¿½ seu filme favorito?</p>
             <input type="text" name="rSeguranca"  class="input" placeholder="Resposta da Pergunta" required/>
         </label>
          <c:forEach var="erro" items="${erro }">

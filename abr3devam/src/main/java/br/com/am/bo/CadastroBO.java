@@ -6,9 +6,11 @@ import br.com.am.entities.UserExistente;
 public class CadastroBO {
 
 	public boolean validarNome(String nome) {
-
 		for (int i = 0; i < nome.length(); i++) {
 			if (!Character.isAlphabetic(nome.charAt(i))) {
+				return false;
+			}
+			if(nome.contains(" ")) {
 				return false;
 			}
 		}
@@ -27,6 +29,7 @@ public class CadastroBO {
 		if (sobrenome.length() > 40 || sobrenome.length() < 2) {
 			return false;
 		}
+		
 		return true;
 	}
 
@@ -61,6 +64,7 @@ public class CadastroBO {
 			return false;
 		}
 		return true;
+	//FINALIZAR VERIFICAÇÃO DA EMAIL
 	}
 
 	public boolean validarSenha(String senha) {
@@ -69,6 +73,11 @@ public class CadastroBO {
 		}
 		if (senha.isEmpty()) {
 			return false;
+		}
+		for (int i = 0; i < senha.length(); i++) {
+			if (!Character.isSpaceChar((senha.charAt(i)))) {
+				return false;
+			}
 		}
 		return true;
 	}

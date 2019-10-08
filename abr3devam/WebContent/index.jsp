@@ -1,5 +1,5 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+ <%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,7 +22,7 @@
 					<a href="https://www2.fiap.com.br/"> Portal do aluno</a>
 				</p>
 				<p id="nome">
-						Olá
+						Olï¿½
 						 <%=session.getAttribute("nomeAluno")%>!
 					</p>
 				<p class="opcao">
@@ -37,20 +37,20 @@
 				<div class="algoritmo">
 						<img src="img/algoritmo.jpg">
 							<h5 class="name">Algoritimo</h5>
-								<p class="desc">EAD focado oferecer apoio à matéria de algoritmos</p>
+								<p class="desc">EAD focado oferecer apoio ï¿½ matï¿½ria de algoritmos</p>
 									<a href="#"  class="unavailable">Conteudo</a>
 				</div>
 				<div class="portugues">
 						<img src="img/portugues.jpg">
 							<h5 class="name">Portugues</h5>
 								<p class="desc">EAD focado em passar conhecimentos de
-							negócio</p>
+							negï¿½cio</p>
 								<a href="portugues.jsp">Conteudo</a>
 				</div>
 				<div class="matematica">
 						<img src="img/mat.jpg" class="card-img-top">
 						<h5 class="name">Matematica</h5>
-							<p class="desc">EAD focado em fortalecer alguns conceitos	matemáticos</p>
+							<p class="desc">EAD focado em fortalecer alguns conceitos	matemï¿½ticos</p>
 								<a href="#" class="unavailable">Conteudo</a>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 
 		<c:otherwise> 
 			<div class="n-logado">
-				<p>Você não possui cadastro!</p>
+				<p>Vocï¿½ nï¿½o possui cadastro!</p>
 			</div>
 			<div class="opcao-deslogado">
 				<a href="cadastrar.jsp">Cadastre-se</a>

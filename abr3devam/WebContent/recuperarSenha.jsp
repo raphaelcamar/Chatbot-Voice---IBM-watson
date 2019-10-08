@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,8 @@
     <div class="container">
                 <p>Digite a resposta colocada no seu cadastro</p>
                 <form action="recuperarSenha" method="post">
-                <label>Resposta de Segurança
-                    <input type="text" name="filme" placeholder="Digite sua resposta de segurança">
+                <label>Resposta de SeguranÃ§a
+                    <input type="text" name="filme" placeholder="Digite sua resposta de seguranï¿½a">
                     </label>
                     <label>E-mail
                     <input type="email" name="email" placeholder="digite seu email">

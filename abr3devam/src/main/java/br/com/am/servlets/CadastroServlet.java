@@ -1,8 +1,10 @@
 package br.com.am.servlets;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +22,7 @@ public class CadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp){
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
 		Cadastro c = new Cadastro();
 		Rseguranca r = new Rseguranca();
 
@@ -49,7 +51,7 @@ public class CadastroServlet extends HttpServlet {
 				erro.add("O sobrenome deverá conter apenas letras, ");
 			}
 			if (bo.validarSenha(c.getSenha()) == false) {
-				erro.add("A senha deverá conter APENAS seis (6) caracteres!");
+				erro.add("Senha inválida!");
 			}
 			if (bo.validarEmail(c.getEmail()) == false) {
 				erro.add("O e-mail deverá ser válido!");
@@ -96,6 +98,6 @@ public class CadastroServlet extends HttpServlet {
 				System.out.println("não conseguiu encerrar!");
 			}
  		}
-
 	}
+	
 }

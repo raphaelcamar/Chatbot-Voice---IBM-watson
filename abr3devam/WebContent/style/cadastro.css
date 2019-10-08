@@ -2,7 +2,7 @@
     padding:0;
     margin:0;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 body{
     background-image: url("../img/login2.jpg");
@@ -57,7 +57,7 @@ h1{
     text-align:center;
 }
 .invalid-fill{
-	color:#920101;
+	color: #ff3333;
 }
 @media screen and (max-width:768px){
     input{

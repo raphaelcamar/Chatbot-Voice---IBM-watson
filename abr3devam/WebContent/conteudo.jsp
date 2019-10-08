@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
     <title>Conceito Startup</title>
     <link rel="stylesheet" href="style/portPdf.css">
 </head>

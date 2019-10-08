@@ -1,7 +1,5 @@
 package br.co.am.testes;
-
 import br.com.am.bo.CadastroBO;
-import br.com.am.dao.AlunoDAO;
 import br.com.am.dao.RecuperarSenhaDAO;
 
 public class Testes {
@@ -15,15 +13,14 @@ public class Testes {
 			
 			String retorno = rsenha.retornarRSeguranca("andre@gmail.com");
 			//System.out.println(retorno);
-			if(retorno.equalsIgnoreCase("mumia")) {
-				System.out.println(retorno);
-				System.out.println(rsenha.retornaID("andraae@gmail.com"));
-				
-				String validacao= "ola";
-				System.out.println(validacao.matches("^[a-zA-Z0-9_]"));
-			}else {
-				System.out.println("n");
-			}
+//			if(retorno.equalsIgnoreCase("mumia")) {
+//				System.out.println(retorno);
+//				System.out.println(rsenha.retornaID("andraae@gmail.com"));
+//			 boolean result = true;
+	       	
+//			}else {
+//				System.out.println("n");
+//			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {

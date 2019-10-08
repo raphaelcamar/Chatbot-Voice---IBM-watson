@@ -11,6 +11,7 @@ body{
 *{
     text-decoration:none;
     color:white;
+    font-family: 'Roboto Slab', serif;
 }
 header{
   margin-top:2%;
