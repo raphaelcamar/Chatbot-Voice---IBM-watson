@@ -5,87 +5,79 @@ import br.com.am.entities.UserExistente;
 
 public class CadastroBO {
 
-	
 	public boolean validarNome(String nome) {
 
 		for (int i = 0; i < nome.length(); i++) {
-			if(!Character.isAlphabetic(nome.charAt(i))) {
+			if (!Character.isAlphabetic(nome.charAt(i))) {
 				return false;
 			}
 		}
-		if(nome.length() > 30) {
+		if (nome.length() > 30 || nome.length() < 2) {
 			return false;
 		}
 		return true;
 	}
-	
-	
+
 	public boolean validarSobrenome(String sobrenome) {
 		for (int i = 0; i < sobrenome.length(); i++) {
-			if(!Character.isAlphabetic(sobrenome.charAt(i))) {
+			if (!Character.isAlphabetic(sobrenome.charAt(i))) {
 				return false;
 			}
 		}
-		//não deixar ultrapassar o tamanho do banco
-		if(sobrenome.length() > 40){
+		if (sobrenome.length() > 40 || sobrenome.length() < 2) {
 			return false;
-			}
-		return true;
 		}
-	
+		return true;
+	}
+
 	public boolean validarRM(String rm) {
 		for (int i = 0; i < rm.length(); i++) {
-			if(!Character.isDigit(rm.charAt(i))) {
+			if (!Character.isDigit(rm.charAt(i))) {
 				return false;
 			}
 		}
-		if(rm.length() > 5) {
+		if (rm.length() != 5) {
 			return false;
 		}
 		return true;
 	}
-	
-	public boolean validarRespostaSeguranca(String resposta) {
-		if(resposta.length() > 50) {
-			return false;
-		}
-		if(resposta.isEmpty()) {
-			return false;
-		}
-		return true;
-	}
-	
-	public boolean validarEmail(String email) {
-		if(!email.contains("@") || !email.contains(".")) {
-			return false;
-		}
-		
-		if(email.length()>60) {
-			return false;
-		}
-		return true;
-	}
-	
-	public boolean validarSenha(String senha) {
-		if(senha.length() > 6) {
-			return false;
-		}
-		if(senha.isEmpty()) {
-			return false;
-		}
-		if(!senha.matches("/[^a-zA-Z0-9]+/g")) {
-			return false;
-		}
-		return true;
-	}
-	
 
-	
-	public UserExistente RmExistente(String rm)throws Exception {
+	public boolean validarRespostaSeguranca(String resposta) {
+		if (resposta.length() > 50 || resposta.length() < 2) {
+			return false;
+		}
+		if (resposta.isEmpty()) {
+			return false;
+		}
+		return true;
+	}
+
+	public boolean validarEmail(String email) {
+		if (!email.contains("@") || !email.contains(".")) {
+			return false;
+		}
+
+		if (email.length() > 60 || email.length() < 7) {
+			return false;
+		}
+		return true;
+	}
+
+	public boolean validarSenha(String senha) {
+		if (senha.length() > 20 || senha.length() < 6) {
+			return false;
+		}
+		if (senha.isEmpty()) {
+			return false;
+		}
+		return true;
+	}
+
+	public UserExistente RmExistente(String rm) throws Exception {
 		return new AlunoDAO().VerificarRm(rm);
 	}
-	
-	public UserExistente EmailExistente(String email)throws Exception{
+
+	public UserExistente EmailExistente(String email) throws Exception {
 		return new AlunoDAO().verificarEmail(email);
-		}
+	}
 }

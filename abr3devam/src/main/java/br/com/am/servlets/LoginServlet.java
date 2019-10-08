@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet{
 						RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 								dispatcher.forward(req, resp);
 			}else{
-				erro = "";
+				erro = "erro";
 				HttpSession session = req.getSession();
 				session.setAttribute("erroLogin", erro );
 				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");

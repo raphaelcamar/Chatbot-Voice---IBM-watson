@@ -25,7 +25,7 @@
 	            <input type="number" name="rm"  class="input input2" placeholder="&#xf007; RM" required />
 	            <input type="password" maxlength="6" name="senha" class="input input3" placeholder="&#xf023; Digite sua senha" required/>
 	            <c:choose>
-		<c:when test="${empty erroLogin}">
+		<c:when test="${not empty erroLogin}">
 		 <p class="invalid-user">Usuário ou senha inválidos!</p>
 		</c:when>
 		</c:choose>
