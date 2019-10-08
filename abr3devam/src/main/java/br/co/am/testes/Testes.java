@@ -18,6 +18,9 @@ public class Testes {
 			if(retorno.equalsIgnoreCase("mumia")) {
 				System.out.println(retorno);
 				System.out.println(rsenha.retornaID("andraae@gmail.com"));
+				
+				String validacao= "ola";
+				System.out.println(validacao.matches("^[a-zA-Z0-9_]"));
 			}else {
 				System.out.println("n");
 			}

@@ -23,9 +23,9 @@ public class RecuperarSenha extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		
-		String filme = req.getParameter("filme");
-		String email = req.getParameter("email");
-		String novaSenha = req.getParameter("novaSenha");
+		String filme = req.getParameter("filme").toUpperCase();
+		String email = req.getParameter("email").toUpperCase();
+		String novaSenha = req.getParameter("novaSenha").toUpperCase();
 		ArrayList<String> erros = new ArrayList<String>();
 		
 		RecuperarSenhaDAO rsenha = null;
@@ -39,7 +39,7 @@ public class RecuperarSenha extends HttpServlet{
 			 	if(retorno == null) {
 			 		erros.add( "E-mail não cadastrado!");
 			 	}else
-					if(retorno.equals(filme)) {
+					if(retorno.equalsIgnoreCase(filme)) {
 						if(bo.validarSenha(novaSenha) == false) {
 							erros.add("Senha incorreta");
 						}else {

@@ -26,8 +26,8 @@ public class LoginServlet extends HttpServlet{
 	
 		AlunoDAO dao = null;
 		
-		String rm = req.getParameter("rm");
-		String senha = req.getParameter("senha");
+		String rm = req.getParameter("rm").toUpperCase();
+		String senha = req.getParameter("senha").toUpperCase();
 		
 		try {
 			Login l = new LoginBO().validarUser(rm, senha);
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet{
 						RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 								dispatcher.forward(req, resp);
 			}else{
-				erro = "erro";
+				erro = "";
 				HttpSession session = req.getSession();
 				session.setAttribute("erroLogin", erro );
 				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");

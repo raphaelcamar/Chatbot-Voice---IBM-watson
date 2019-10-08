@@ -70,6 +70,12 @@ public class CadastroBO {
 		if(senha.length() > 6) {
 			return false;
 		}
+		if(senha.isEmpty()) {
+			return false;
+		}
+		if(!senha.matches("/[^a-zA-Z0-9]+/g")) {
+			return false;
+		}
 		return true;
 	}
 	

@@ -5,11 +5,22 @@ html,body{
     overflow:hidden;
 }
 body{
-    /* background-image: url("../img/bg3.jpg"); */
+    background-image: url("../img/login2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ 
 
 }
 *{
     font-family: 'Open Sans', sans-serif;
+}
+.erro{
+	color:red;
+	position:absolute;
+	left:5%;
+	top:5%;
+	font-size:15px;
 }
 .container{
     background-color:#524d4df2;
@@ -19,7 +30,7 @@ body{
     display:flex;
     text-align:center;
     width:60%;
-    height:50%;
+    height:70%;
     justify-content:space-around;
     flex-wrap: wrap;
     color:white;

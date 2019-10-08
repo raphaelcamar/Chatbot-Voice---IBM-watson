@@ -7,9 +7,10 @@ body, html{
 }
 
 body{
-   background:linear-gradient( #25AEA9 , #2e727d 13%);
-   background-attachment:fixed;
-    background-repeat:no-repeat;
+	background-image: url("../img/login2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 } 
 header{
 	margin-left:-3%;
@@ -71,8 +72,7 @@ img{
 .container a:hover{
 	text-decoration:underline;
 	background-color:black;
-	color:white;
-	
+	color:white;	
 }
 #nome{
 	color:#ffffff;

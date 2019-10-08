@@ -34,6 +34,7 @@ input[type=number] {
     width: 320px;
     max-width: 90vw;
     margin: 0 auto;
+
 }
 .form .img {
     margin: 30px 0;
@@ -60,6 +61,7 @@ input[type=number] {
     font-family: "FontAwesome", Open Sans, Arial;
     font-size: 100%;
     color: #fff;
+    background-color: #00000082;
 }
 .botao{
     padding:5% 13% 5% 13%;
@@ -110,6 +112,10 @@ input[type=number] {
 input.valid{
     border-bottom: 3px solid rgb(1, 184, 1);
     transition: all ease-out 0.3s;
+}
+.invalid-user{
+    color:white !important;
+    font-size:15px !important;
 }
 
 

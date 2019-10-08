@@ -27,8 +27,8 @@ public class AlunoDAO {
 	public int adcionarAluno(Cadastro c)throws Exception {
 		stmt = con.prepareStatement("INSERT INTO CHATBOT_ALUNO (ID_ALUNO,NOME, SOBRENOME, SENHA, RM, EMAIL"+
 				") VALUES(ID_ALUNO_SEQ.nextval, ?,?,?,?,?)");
-		stmt.setString(1, c.getNome().toUpperCase());
-		stmt.setString(2, c.getSobrenome().toUpperCase());
+		stmt.setString(1, c.getNome());
+		stmt.setString(2, c.getSobrenome());
 		stmt.setString(3, c.getSenha());
 		stmt.setString(4, c.getRm());
 		stmt.setString(5, c.getEmail());
@@ -40,7 +40,7 @@ public class AlunoDAO {
 				+ "RESPOSTA_SEGURANCA, ID_ALUNO" + ") VALUES(RESP_SEG_SEQ.nextval, ?, ID_ALUNO_RESP_SEQ.nextval)");
 		
 		stmt = con.prepareStatement(add2);
-		stmt.setString(1, r.getRseguranca());
+		stmt.setString(1, r.getRseguranca().toUpperCase());
 		return stmt.executeUpdate();
 		
 	}

@@ -24,12 +24,12 @@ public class CadastroServlet extends HttpServlet {
 		Cadastro c = new Cadastro();
 		Rseguranca r = new Rseguranca();
 
-		r.setRseguranca(req.getParameter("rSeguranca"));
-		c.setNome(req.getParameter("nome"));
-		c.setSobrenome(req.getParameter("sobrenome"));
-		c.setEmail(req.getParameter("email"));
-		c.setRm(req.getParameter("rm"));
-		c.setSenha(req.getParameter("senha"));
+		r.setRseguranca(req.getParameter("rSeguranca").toUpperCase());
+		c.setNome(req.getParameter("nome").toUpperCase());
+		c.setSobrenome(req.getParameter("sobrenome").toUpperCase());
+		c.setEmail(req.getParameter("email").toUpperCase());
+		c.setRm(req.getParameter("rm").toUpperCase());
+		c.setSenha(req.getParameter("senha").toUpperCase());
 	
 
 		AlunoDAO dao = null;

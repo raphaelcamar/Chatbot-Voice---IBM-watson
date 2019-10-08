@@ -17,32 +17,32 @@
     <div class="img">
         <img src="img/on.jpg" alt="" width="60%" height="40%">
     </div>
-    <c:forEach var="erro" items="${erro }">
-   <p>${erro }</p>
    
-   </c:forEach> 
    <h1>Cadastro</h1>
    <section class="container">
    <div class="form">
-        <form action="#" method="POST" name="formulario">
+        <form action="cadastrar" method="POST" name="formulario">
             <label>Nome:
-            <input type="text" name="nome"  class="input" placeholder="nome" />
+            <input type="text" name="nome"  class="input" placeholder="nome" required />
         </label>
         <label>Sobrenome:
-            <input type="text" name="sobrenome"  class="input" placeholder="segundo nome" />
+            <input type="text" name="sobrenome"  class="input" placeholder="segundo nome" required />
         </label>
         <label>E-mail:
-            <input type="email" name="email"  class="input" placeholder="Email" />
+            <input type="email" name="email"  class="input" placeholder="Email" required />
         </label>
         <label>RM:
-            <input type="text" name="rm"  class="input" placeholder="RM" />
+            <input type="text" name="rm"  class="input" placeholder="RM" required/>
         </label>
         <label>Senha:
-            <input type="password" name="senha" class="input" placeholder="senha"/>
+            <input type="password" name="senha" class="input" placeholder="senha"required/>
         </label>
             <label> <p class="question">Qual é seu filme favorito?</p>
-            <input type="text" name="rSeguranca"  class="input" placeholder="Resposta da Pergunta" />
+            <input type="text" name="rSeguranca"  class="input" placeholder="Resposta da Pergunta" required/>
         </label>
+         <c:forEach var="erro" items="${erro }">
+   <p class="invalid-fill">${erro }</p>
+   		</c:forEach> 
             <button class="botao">Cadastre-se</button>
         </form>
     </div>

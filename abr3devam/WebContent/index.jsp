@@ -23,7 +23,7 @@
 				</p>
 				<p id="nome">
 						Olá
-						<!-- <%=session.getAttribute("nomeAluno")%>! -->
+						 <%=session.getAttribute("nomeAluno")%>!
 					</p>
 				<p class="opcao">
 					<a href="logout">Sair</a>
@@ -45,7 +45,7 @@
 							<h5 class="name">Portugues</h5>
 								<p class="desc">EAD focado em passar conhecimentos de
 							negócio</p>
-								<a href="conteudo.jsp">Conteudo</a>
+								<a href="portugues.jsp">Conteudo</a>
 				</div>
 				<div class="matematica">
 						<img src="img/mat.jpg" class="card-img-top">
