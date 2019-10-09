@@ -37,20 +37,20 @@
 				<div class="algoritmo">
 						<img src="img/algoritmo.jpg">
 							<h5 class="name">Algoritimo</h5>
-								<p class="desc">EAD focado oferecer apoio � mat�ria de algoritmos</p>
+								<p class="desc">EAD focado em oferecer apoio à matéria de algoritmos</p>
 									<a href="#"  class="unavailable">Conteudo</a>
 				</div>
 				<div class="portugues">
 						<img src="img/portugues.jpg">
 							<h5 class="name">Portugues</h5>
 								<p class="desc">EAD focado em passar conhecimentos de
-							neg�cio</p>
+							negócio</p>
 								<a href="portugues.jsp">Conteudo</a>
 				</div>
 				<div class="matematica">
 						<img src="img/mat.jpg" class="card-img-top">
 						<h5 class="name">Matematica</h5>
-							<p class="desc">EAD focado em fortalecer alguns conceitos	matem�ticos</p>
+							<p class="desc">EAD focado em fortalecer alguns conceitos	matemáticos</p>
 								<a href="#" class="unavailable">Conteudo</a>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 
 		<c:otherwise> 
 			<div class="n-logado">
-				<p>Voc� n�o possui cadastro!</p>
+				<p>Você não possui cadastro!</p>
 			</div>
 			<div class="opcao-deslogado">
 				<a href="cadastrar.jsp">Cadastre-se</a>

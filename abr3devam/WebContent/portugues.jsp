@@ -15,7 +15,7 @@
      <header>
         <p>português</p>
         <p>Fiap EAD</p>
-        <p><a href="#">Sair</a></p>
+        <p><a href="logout">Sair</a></p>
     </header>
         <p class="list">Lista de conteúdos</p>
     <div class="container">
@@ -35,7 +35,7 @@
         <a href="#">Leia</a>
 </div>
     <div class="conteudo"><p>Cap 6 - Conceito de Startup</p>
-        <a href="#">Leia</a>
+        <a href="conteudo.jsp">Leia</a>
 </div>
     <div class="conteudo"><p>Cap 7 - Modelo de Negócios - Canvas </p>
         <a href="#">Leia</a>
