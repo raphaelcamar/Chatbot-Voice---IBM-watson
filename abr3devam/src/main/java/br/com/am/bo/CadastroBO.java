@@ -1,22 +1,35 @@
 package br.com.am.bo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.UserExistente;
 
 public class CadastroBO {
 
 	public boolean validarNome(String nome) {
-		for (int i = 0; i < nome.length(); i++) {
-			if (!Character.isAlphabetic(nome.charAt(i))) {
-				return false;
-			}
-			if(nome.contains(" ")) {
-				return false;
-			}
-		}
+//		for (int i = 0; i < nome.length(); i++) {
+//			if (!Character.isAlphabetic(nome.charAt(i))) {
+//				return false;
+//			}
+//			if (nome.contains(" ")) {
+//				return false;
+//			}
+//		}
 		if (nome.length() > 30 || nome.length() < 2) {
 			return false;
 		}
+
+		if (nome != null && nome.length() > 0) {
+			String expression = "/[A-ZÀ-Ÿ][A-zÀ-ÿ']+\\s([A-zÀ-ÿ']\\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/";
+			Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(nome);
+			if (matcher.matches()) {
+				return true;
+			}
+		}
+		
 		return true;
 	}
 
@@ -29,7 +42,7 @@ public class CadastroBO {
 		if (sobrenome.length() > 40 || sobrenome.length() < 2) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -63,8 +76,16 @@ public class CadastroBO {
 		if (email.length() > 60 || email.length() < 7) {
 			return false;
 		}
-		return true;
-	//FINALIZAR VERIFICAÇÃO DA EMAIL
+
+		if (email != null && email.length() > 0) {
+			String expression = "[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+			Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(email);
+			if (matcher.matches()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean validarSenha(String senha) {
@@ -75,7 +96,7 @@ public class CadastroBO {
 			return false;
 		}
 		for (int i = 0; i < senha.length(); i++) {
-			if (!Character.isSpaceChar((senha.charAt(i)))) {
+			if (Character.isSpaceChar((senha.charAt(i)))) {
 				return false;
 			}
 		}
