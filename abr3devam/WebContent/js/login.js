@@ -17,9 +17,11 @@ inNome.addEventListener("input" , function(ev) {
 
 inSenha.addEventListener("input" , function(ev) {
     
-	if ( this.value.length === 6 ) {
+	if ( this.value.length >= 6 ) {
 		this.classList.add('valid');
     } else {
-    	this.classList.remove('valid');
+    	if(this.value.length >= 20){
+    		this.classList.remove('valid');
+    	}
     }
 });

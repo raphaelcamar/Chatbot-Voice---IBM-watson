@@ -29,14 +29,17 @@ public class CadastroBO {
 				return true;
 			}
 		}
-		
+
 		return true;
 	}
 
 	public boolean validarSobrenome(String sobrenome) {
-		for (int i = 0; i < sobrenome.length(); i++) {
-			if (!Character.isAlphabetic(sobrenome.charAt(i))) {
-				return false;
+		if (sobrenome != null && sobrenome.length() > 0) {
+			String expression = "/[A-ZÀ-Ÿ][A-zÀ-ÿ']+\\s([A-zÀ-ÿ']\\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/";
+			Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(sobrenome);
+			if (matcher.matches()) {
+				return true;
 			}
 		}
 		if (sobrenome.length() > 40 || sobrenome.length() < 2) {
