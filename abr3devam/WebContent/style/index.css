@@ -7,7 +7,7 @@ body, html{
 }
 
 body{
-   background-image: url("../img/login2.jpg");
+	background-image: url("../img/cont.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,13 +19,15 @@ header{
     display:flex;
 	justify-content:space-around;
 	font-size:30px;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Open Sans', sans-serif;
 }
 h1{
 	height:10%;
 	width:50%;
 	font-weight:lighter;
-	color: #ffa21c;
+	border-color:black;
+	color:#151515;
+	background-color:#ffffffb3;
 	border-style:solid;
 	border-width:thin;
 	display:flex;
@@ -34,6 +36,7 @@ h1{
 	justify-content:center;
 	margin: 0 auto;
 	margin-bottom:6%;
+	padding:10px;
 }
 .container{
 	display:flex;
@@ -72,8 +75,7 @@ img{
 .container a:hover{
 	text-decoration:underline;
 	background-color:black;
-	color:white;
-	
+	color:white;	
 }
 #nome{
 	color:#ffffff;
@@ -81,7 +83,7 @@ img{
 }
 .opcao a{
 	text-decoration:none;
-	color: #dff7dc;
+	color: #ffffff;
 }
 .opcao a:hover{
 	text-decoration:underline;
@@ -114,4 +116,5 @@ img{
 		h1{
 			font-size:25px;
 		}
+	
 }
