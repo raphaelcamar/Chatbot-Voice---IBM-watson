@@ -13,10 +13,10 @@
 </head>
 <body>
     <div class="container">
-                <p>Digite a resposta colocada no seu cadastro</p>
+                <p class="titulo">Digite a resposta colocada no seu cadastro</p>
                 <form action="recuperarSenha" method="post">
                 <label>Resposta de Segurança
-                    <input type="text" name="filme" placeholder="Digite sua resposta de seguran�a">
+                    <input type="text" name="filme" placeholder="Digite sua resposta de segurança">
                     </label>
                     <label>E-mail
                     <input type="email" name="email" placeholder="digite seu email">
@@ -24,16 +24,16 @@
                     <label>Nova senha
                     <input type="password" name="novaSenha" placeholder="Digite suanova senha"/>
                     </label>
+                    <button class="check">Verificar</button>
                        <c:choose>
     	<c:when test="${valor != null }">
-    		<p>Senha mudada com sucesso! <a href="login.jsp">Voltar para login</a>
+    		<p class="feedback">Senha mudada com sucesso! <a href="login.jsp">Voltar para login</a>
     	</c:when>
     </c:choose>
     <c:forEach var="erro" items="${erro }">
    <p class="erro">${erro }</p>
    </c:forEach>
 
-                    <button class="check">Verificar</button>
                 </form>
             </div>
  

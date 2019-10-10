@@ -1,39 +1,37 @@
-
 html,body{
     height:100%;
     width:100%;
     overflow:hidden;
 }
 body{
-    background-image: url("../img/login2.jpg");
+   background-image: url("../img/login2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
- 
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 *{
       font-family: 'Roboto Slab', serif;
 }
 .erro{
-	color:red;
-	position:absolute;
-	left:5%;
-	top:5%;
+	color:#e33;
 	font-size:15px;
+	margin-left:22%;
 }
-.container{
+form{
     background-color:#524d4df2;
     border-style:solid;
     border-radius:10px;
-    margin: 10% auto;
+    margin:auto;
     display:flex;
     text-align:center;
-    width:60%;
-    height:70%;
-    justify-content:space-around;
+    width:50%;
+    height:50%;
+    justify-content:space-between;
     flex-wrap: wrap;
-    color:white;
+    color: white;
 }
 input{
     display:block;
@@ -44,19 +42,42 @@ input{
     border-style: none;
     color:#ffffff;
     border-radius:2px;
-    margin:2%;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+label{
+	margin-left:20%;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 p{
-    font-size:40px;
+    font-size:30px;
+}
+.titulo{
+	margin-left:20px;
+	width:100%;
+	text-align:center;
+}
+.feedback{
+	margin-top:-10px;
+}
+.feedback a{
+	text-decoration:none;
+	color:#1404fd;
+	padding:30%;
+}
+.feedback a:hover{
+	text-decoration:underline;
 }
 .check{
-    padding:10px 40px;
-    margin-top:10%;
+    padding:10px 50px;
+    margin-top:8%;
     margin-bottom:10%;
     background-color:#04ff04;
     border-style:none;
     border-radius:5px;
     color:black;
+    margin-left:36%;
 }
 @media screen and (max-width:768px){
     input{
