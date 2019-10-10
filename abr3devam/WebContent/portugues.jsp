@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/portugues.css">
-    <title>Document</title>
+    <title>Português</title>
 </head>
 <body>
      <header>
-        <p>português</p>
+        <p>Português</p>
         <p>Fiap EAD</p>
         <p><a href="logout">Sair</a></p>
     </header>

@@ -1,27 +1,27 @@
 var botao = document.querySelector(".botao");
 var inNome = document.querySelector(".input2");
 var inSenha = document.querySelector(".input3");
+var check;
+botao.disabled = true;
 
 inNome.addEventListener("input" , function(ev) {
     
-	if ( this.value.length === 5 ) {
+	if (this.value.length === 5 ) {
 		this.classList.add('valid');
     } else if ( this.value.length < 6 ) {
     	this.classList.remove('valid');
-    } else if ( that.value.length > 6 ) {
-    	var myInput = document.querySelector(".input2");
-    	
-    	this.value = this.value.slice(0,6);
-    }
+    } check = this.classList.contains('valid') ? true : false;
 });
 
 inSenha.addEventListener("input" , function(ev) {
     
-	if ( this.value.length >= 6 ) {
+	if ( this.value.length >= 6 & this.value.length <=20 && check) {
 		this.classList.add('valid');
+		botao.classList.add('botao2')
+		botao.disabled = false;
     } else {
-    	if(this.value.length >= 20){
-    		this.classList.remove('valid');
-    	}
+		this.classList.remove('valid');
+		botao.classList.remove('botao2')
+		botao.disabled = true;
     }
 });

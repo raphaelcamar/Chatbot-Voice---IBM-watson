@@ -64,7 +64,11 @@ html,body {
 	justify-content: flex-end;
 	margin: 10px 0;
 }
-
+.beta{
+	cursor: pointer;
+	margin-top:26px;
+	margin-left:23px;
+}
 .icon-chat {
 	position: fixed;
 	left: 50px;
@@ -74,8 +78,8 @@ html,body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 60px;
-    width: 60px;
+	height: 70px;
+    width: 70px;
     cursor: pointer;
 }
 

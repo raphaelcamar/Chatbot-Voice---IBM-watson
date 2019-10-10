@@ -42,15 +42,14 @@
 				</div>
 				<div class="portugues">
 						<img src="img/portugues.jpg">
-							<h5 class="name">Portugues</h5>
-								<p class="desc">EAD focado em passar conhecimentos de
-							negócio</p>
+							<h5 class="name">Português</h5>
+								<p class="desc">EAD focado em passar conhecimentos na área de negócios</p>
 								<a href="portugues.jsp">Conteudo</a>
 				</div>
 				<div class="matematica">
 						<img src="img/mat.jpg" class="card-img-top">
-						<h5 class="name">Matematica</h5>
-							<p class="desc">EAD focado em fortalecer alguns conceitos	matemáticos</p>
+						<h5 class="name">Matemática</h5>
+							<p class="desc">EAD focado em fortalecer alguns conceitos matemáticos</p>
 								<a href="#" class="unavailable">Conteudo</a>
 				</div>
 			</div>
