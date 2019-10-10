@@ -34,6 +34,7 @@ html,body {
 }
 .chatbot.is--active {
 	left: 50px;
+	background-image: linear-gradient(#28afd9 75%, #e10c5a 97%);
 }
 
 .chat-container {

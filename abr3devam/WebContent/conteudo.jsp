@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<c:choose>
+<c:when test="${logado != null }"> 
+	<link rel="shortcut icon" href="img/favicon.ico">
     <meta charset="utf-8">
     <title>Conceito Startup</title>
     <link rel="stylesheet" href="style/portPdf.css">
@@ -34,10 +38,20 @@
 				</button>
           </div>
     </div>
-    <script type="text/javascript" src="js/recorder.js"></script>
-    <script type="text/javascript" src="js/assistant.js"></script>
-    <script type="text/javascript" src="js/tts.js"></script>
-    <script type="text/javascript" src="js/stt.js"></script>
+    < type="text/java" src="js/recorder.js"></>
+    < type="text/java" src="js/assistant.js"></>
+    < type="text/java" src="js/tts.js"></>
+    < type="text/java" src="js/stt.js"></>
+    	</c:when>
+    <c:otherwise> 
+			<div class="n-logado">
+				<p>Você não possui cadastro!</p>
+			</div>
+			<div class="opcao-deslogado">
+				<a href="cadastro.jsp">Cadastre-se</a>
+			</div>
+		 </c:otherwise>
+    </c:choose>
 </body>
 
 </html>

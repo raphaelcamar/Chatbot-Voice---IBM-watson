@@ -1,4 +1,3 @@
-
 body, html{
     height: 100%;
     width:100%;
@@ -20,6 +19,7 @@ header{
 	justify-content:space-around;
 	font-size:30px;
 	font-family: 'Open Sans', sans-serif;
+	margin-bottom:7%;
 }
 h1{
 	height:10%;
@@ -50,7 +50,7 @@ img{
 	height:40%;
 	border-radius:5px;
 }
-.matematica,.algoritmo, .portugues{
+.matematica, .algoritmo, .portugues{
 	display:flex;
 	align-items:center;
 	flex-flow:column;
@@ -75,7 +75,7 @@ img{
 .container a:hover{
 	text-decoration:underline;
 	background-color:black;
-	color:white;	
+	color:white;
 }
 #nome{
 	color:#ffffff;
@@ -91,9 +91,12 @@ img{
 .name{
 	font-size:0.6cm;
 }
-.unavailable{
-	color:grey;
-	cursor: default;
+.container .unavailable{
+	color:#fbfbfb85;
+	background-color:#444241de;
+	cursor:default;
+	transition:none;
+	border-color:#444241de;
 }
 @media screen and (max-width:768px){
 		.container{
