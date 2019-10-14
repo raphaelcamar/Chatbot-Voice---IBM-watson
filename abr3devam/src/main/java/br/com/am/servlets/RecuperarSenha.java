@@ -58,11 +58,13 @@ public class RecuperarSenha extends HttpServlet{
 			 			dispatcher.forward(req, resp);
 	}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("O processo de recuperação de senha não foi completo.");
 		}finally {
 			try {
 				rsenha.encerrar();
 			}catch(Exception e){
 				e.printStackTrace();
+				System.out.println("O banco não foi encerrado");
 			}
 		}
 		

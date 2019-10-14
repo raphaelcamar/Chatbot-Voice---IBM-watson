@@ -37,35 +37,30 @@ public class AssistantV1Servlet extends HttpServlet {
 
 	private MessageResponse assistantAPICall(String msg) {
 
-		// Configuração de autenticação do serviço
+		
 		IamOptions options = new IamOptions.Builder()
 				.apiKey("Zfq-xWeBOS5zkYvfFVdCTbxra63EQIP6BpropO9ydZDR")
 				.build();
 		
-		// Criando o objeto do serviço desejado
+		
 		Assistant service = new Assistant("2018-02-16", options);
 		String workspaceId = "51cc9a53-49d6-4dd9-9341-43682422eed0";
 		
-		// Preparando a mensagem de envio
+	
 		MessageInput input = new MessageInput();
-		input.setText(msg); // é aqui
-		
-		// Configurando os parametros para o Watson
+		input.setText(msg);
 		MessageOptions messageOptions = new MessageOptions.Builder()
 				.workspaceId(workspaceId)
 				.input(input)
 				.context(this.context)
 				.build();
 		
-		// Conectando com o Assistant e recebendo a resposta dele
 		MessageResponse response  = service.message(messageOptions)
 				.execute()
 				.getResult();
 		
 		this.context = response.getContext();
-		
-		// Verifica se as variaveis de contexto foram totalmente preenchidas
-		// Quando o nó de dialogo for completo reinicia o contexto
+	
 		if (response.getContext().getSystem().getProperties().get("branch_exited") != null)
 			if ((boolean) response.getContext().getSystem().getProperties().get("branch_exited") &&
 					response.getContext().getSystem().getProperties().get("branch_exited_reason").equals("completed"))

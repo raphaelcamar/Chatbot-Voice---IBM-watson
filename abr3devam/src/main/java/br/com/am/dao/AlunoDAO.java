@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import br.com.am.conexao.Conexao;
-import br.com.am.entities.Cadastro;
+import br.com.am.entities.Aluno;
 import br.com.am.entities.Rseguranca;
 import br.com.am.entities.UserExistente;
 
@@ -23,7 +23,7 @@ public class AlunoDAO {
 		con.close();
 	}
 
-	public int adcionarAluno(Cadastro c) throws Exception {
+	public int adcionarAluno(Aluno c) throws Exception {
 		stmt = con.prepareStatement("INSERT INTO CHATBOT_ALUNO (ID_ALUNO, NOME, SOBRENOME, SENHA, RM, EMAIL"
 				+ ") VALUES(ID_ALUNO_SEQ.nextval, ?,?,?,?,?)");
 		stmt.setString(1, c.getNome());
@@ -74,7 +74,6 @@ public class AlunoDAO {
 			String email2 = rs.getString("EMAIL");
 			String rm = rs.getString("RM");
 			ue = new UserExistente(rm, email2);
-
 		}
 		return ue;
 	}

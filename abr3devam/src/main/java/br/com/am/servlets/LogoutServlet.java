@@ -23,6 +23,7 @@ public class LogoutServlet extends HttpServlet{
 			req.getRequestDispatcher("login.jsp").forward(req, resp);
 		}catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("O usuário não teve sua sessão finalizada");
 		}
 		
 	}

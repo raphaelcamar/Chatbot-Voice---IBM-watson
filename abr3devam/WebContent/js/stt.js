@@ -1,16 +1,9 @@
-//webkitURL é legado 
 URL = window.URL || window.webkitURL;
-// stream é criado a partir getUserMedia()
 var gumStream;
-// Objeto do Record.js
 var rec;
-// MediaStreamAudioSourceNode
 var input;
-// criar novo AudioContext
 var AudioContext = window.AudioContext || window.webkitAudioContext; // Classe
-var audioContext; // objeto
-// selecionar os botoes
-
+var audioContext; 
 var btnRecord = document.querySelector("#recordButton");
 var btnOpenChat = document.querySelector('.icon-chat');
 var wrapperChat = document.querySelector('.chatbot');

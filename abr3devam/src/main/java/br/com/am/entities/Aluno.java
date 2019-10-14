@@ -1,6 +1,6 @@
 package br.com.am.entities;
 
-public class Cadastro {
+public class Aluno {
 
 	private int id_aluno;
 	private String nome;
@@ -10,7 +10,7 @@ public class Cadastro {
 	private String email;
 	private Rseguranca rseguranca;
 
-	public Cadastro(int id_aluno, String nome, String sobrenome, String senha, String rm, String email,
+	public Aluno(int id_aluno, String nome, String sobrenome, String senha, String rm, String email,
 			Rseguranca rseguranca) {
 		super();
 		this.id_aluno = id_aluno;
@@ -22,7 +22,7 @@ public class Cadastro {
 		this.rseguranca = rseguranca;
 	}
 
-	public Cadastro() {
+	public Aluno() {
 		super();
 	}
 

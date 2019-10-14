@@ -39,15 +39,14 @@ public class AssistantServlet extends HttpServlet{
 
 	private MessageResponse assistantAPICall(String msg) {
 		
-		// Configuração de autenticação do serviço
+		
 		IamOptions options = new IamOptions.Builder()
 				.apiKey("Zfq-xWeBOS5zkYvfFVdCTbxra63EQIP6BpropO9ydZDR")
 				.build();
-		// Criando o objeto do serviço desejado
+	
 		Assistant service = new Assistant("2019-02-28", options);
 		String assistantId = "51cc9a53-49d6-4dd9-9341-43682422eed0";
 		
-		//  Criando minha sessão
 		CreateSessionOptions sessionOptions = new CreateSessionOptions.Builder()
 				.assistantId(assistantId)
 				.build();
@@ -56,11 +55,9 @@ public class AssistantServlet extends HttpServlet{
 				.getResult();
 		String sessionId = session.getSessionId();
 		
-		// Definindo retorno do contexto
 		MessageInputOptions inputOptions = new MessageInputOptions();
 		inputOptions.setReturnContext(true);
 		
-		// Iniciando a Conversa com Washington
 		MessageInput input = new MessageInput.Builder()
 				.text(msg)
 				.options(inputOptions)

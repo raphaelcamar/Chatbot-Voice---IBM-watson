@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
 
 		AlunoDAO dao = null;
+		RequestDispatcher dispatcher;
 
 		String rm = req.getParameter("rm").toUpperCase();
 		String senha = req.getParameter("senha").toUpperCase();
@@ -36,27 +37,28 @@ public class LoginServlet extends HttpServlet {
 			if (l != null) {
 				HttpSession session = req.getSession();
 				session.setAttribute("logado", l);
-				session.setAttribute("nomeAluno", l.getNome());
-				RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-				dispatcher.forward(req, resp);
+					session.setAttribute("nomeAluno", l.getNome());
+						dispatcher =  req.getRequestDispatcher("index.jsp");
+							dispatcher.forward(req, resp);
 			} else {
 				erro = "erro";
 				HttpSession session = req.getSession();
 				session.setAttribute("erroLogin", erro);
-				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
-				dispatcher = req.getRequestDispatcher("conteudo.jsp");
-				dispatcher = req.getRequestDispatcher("portugues.jsp");
-				dispatcher.forward(req, resp);
+				dispatcher = req.getRequestDispatcher("login.jsp");
+					dispatcher.forward(req, resp);
+						dispatcher = req.getRequestDispatcher("conteudo.jsp");
+							dispatcher = req.getRequestDispatcher("portugues.jsp");
+							
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Não logou");
+				System.out.println("O usuário não foi logado");
 		} finally {
 			try {
 				dao.encerrar();
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("Não encerrou");
+					System.out.println("O banco não foi encerrado");
 			}
 		}
 	}
