@@ -2,7 +2,7 @@ URL = window.URL || window.webkitURL;
 var gumStream;
 var rec;
 var input;
-var AudioContext = window.AudioContext || window.webkitAudioContext; // Classe
+var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioContext; 
 var btnRecord = document.querySelector("#recordButton");
 var btnOpenChat = document.querySelector('.icon-chat');
@@ -17,7 +17,7 @@ btnCloseChat.addEventListener('click', function() {
 	wrapperChat.classList.remove('is--active');
 });
 
-function createAudioElement(blob, classe) {
+function CriarAudio(blob, classe) {
 	var url = URL.createObjectURL(blob);
 	var audio = document.createElement("audio");
 	var div = document.createElement("div");
@@ -69,22 +69,20 @@ btnRecord.addEventListener("click", function(event) {
 });
 
 function generateBlob(blob) {
-	createAudioElement(blob, 'pergunta');
-	sendBlobToText(blob);
+	CriarAudio(blob, 'pergunta');
+	audioParaTexto(blob);
 }
 
-function sendBlobToText(blob) { 												
+function audioParaTexto(blob) { 												
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "stt", true);
 	xhr.setRequestHeader("Content-type", "audio/wav");
-	
-
 	xhr.addEventListener("load", function() {
 		 if(xhr.status == 200) {
 			 var resposta = JSON.parse(xhr.responseText);
 			console.log(resposta)
 		 	resposta[0].alternatives.forEach(function(transcript) {
-				callBot(transcript.transcript)
+				chamarBot(transcript.transcript)
 			 });
 			 
 		 } else {
@@ -94,18 +92,16 @@ function sendBlobToText(blob) {
 	});
 	xhr.send(blob);
 }
-function sendMessageToVoice(msg) {
+function textoParaAudio(msg) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "tts", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
 	
 	xhr.addEventListener("load", function() {
 		if(xhr.status == 200) {
-			// Codigo de sucesso
 			var blob = new Blob([xhr.response], {type : "audio/wav"});
-			createAudioElement(blob, 'resposta');
+			CriarAudio(blob, 'resposta');
 		}else{
-			// Codigo de deu ruim!
 			console.log(xhr.status);
 			console.log(xhr.responseText);
 		}
@@ -115,7 +111,7 @@ function sendMessageToVoice(msg) {
 	xhr.send(data);
 }
 
-function callBot(msg) {
+function chamarBot(msg) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "v1", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
@@ -123,8 +119,7 @@ function callBot(msg) {
 		if(xhr.status == 200) {
 			var respostas = JSON.parse(xhr.responseText);
 			respostas.forEach(function(resposta) {
-				console.log(resposta);
-				sendMessageToVoice(resposta)
+				textoParaAudio(resposta);
 			});
 		}else{
 			console.log(xhr.status);
@@ -133,5 +128,4 @@ function callBot(msg) {
 	});
 	var data = "question=" + msg;
 	xhr.send(data);
-	console.log(data)
 }

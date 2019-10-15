@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 		String rm = req.getParameter("rm").toUpperCase();
 		String senha = req.getParameter("senha").toUpperCase();
 
+		
 		try {
 			Login l = new LoginBO().validarUser(rm, senha);
 			dao = new AlunoDAO();

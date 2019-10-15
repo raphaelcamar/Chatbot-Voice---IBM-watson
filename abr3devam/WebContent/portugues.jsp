@@ -22,6 +22,7 @@
         <p><a href="logout">Sair</a></p>
     </header>
         <p class="list">Lista de conteúdos</p>
+        <form action="conteudo" method="post">
     <div class="container">
         <div class="conteudo"><p>Cap 1 - Comunicação Empresarial</p>
         <a href="#">Leia</a>
@@ -39,7 +40,7 @@
         <a href="#">Leia</a>
 </div>
     <div class="conteudo"><p>Cap 6 - Conceito de Startup</p>
-        <a href="conteudo.jsp">Leia</a>
+      <button name="submit" value="6">Leia</button>
 </div>
     <div class="conteudo"><p>Cap 7 - Modelo de Negócios - Canvas </p>
         <a href="#">Leia</a>
@@ -63,6 +64,7 @@
         <a href="#">Leia</a>
 </div>
     </div>
+</form>
     </c:when>
     <c:otherwise> 
 			<div class="n-logado">

@@ -26,11 +26,11 @@ function createDiv(text, type) {
 //	event.preventDefault();
 //	var question = document.querySelector("#question");
 //	createMessage(question.value, "me");
-//	callBot(question.value);
+//	chamarBot(question.value);
 //	question.value = "";
 //});
 
-function callBot(msg) {
+function chamarBot(msg) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "v1", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
@@ -40,7 +40,7 @@ function callBot(msg) {
 			var respostas = JSON.parse(xhr.responseText);
 			respostas.forEach(function(resposta) {
 				console.log(resposta);
-				sendMessageToVoice(resposta)
+				textoParaAudio(resposta)
 			});
 		}else{
 			// Codigo de deu ruim!
@@ -53,7 +53,7 @@ function callBot(msg) {
 	console.log(data)
 }
 
-function sendMessageToVoice(msg) {
+function textoParaAudio(msg) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "tts", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
@@ -61,7 +61,7 @@ function sendMessageToVoice(msg) {
 		if(xhr.status == 200) {
 			// Codigo de sucesso
 			var blob = new Blob([xhr.response], {type : "audio/wav"});
-			createAudioElement(blob);
+			CriarAudio(blob);
 			
 		}else{
 			// Codigo de deu ruim!
@@ -74,7 +74,7 @@ function sendMessageToVoice(msg) {
 	xhr.send(data);
 }
 
-function createAudioElement(blob) {
+function CriarAudio(blob) {
 	var url = URL.createObjectURL(blob);
 	var audio = document.createElement("audio");
 	var div = document.createElement("div");

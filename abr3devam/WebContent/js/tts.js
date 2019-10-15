@@ -2,11 +2,11 @@
 //btnGetVoice.addEventListener("click", function(event) {
 //	event.preventDefault();
 //	var question = document.querySelector("#question");
-//	sendMessageToVoice(question.value);
+//	textoParaAudio(question.value);
 //	question.value = "";
 //});
 
-function sendMessageToVoice(msg) {
+function textoParaAudio(msg) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "tts", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
@@ -14,7 +14,7 @@ function sendMessageToVoice(msg) {
 		if(xhr.status == 200) {
 			// Codigo de sucesso
 			var blob = new Blob([xhr.response], {type : "audio/wav"});
-			createAudioElement(blob);
+			CriarAudio(blob);
 			console.log("olá")
 		}else{
 			// Codigo de deu ruim!
@@ -27,7 +27,7 @@ function sendMessageToVoice(msg) {
 	xhr.send(data);
 }
 
-function createAudioElement(blob) {
+function CriarAudio(blob) {
 	var url = URL.createObjectURL(blob);
 	var audio = document.createElement("audio");
 	var div = document.createElement("div");
