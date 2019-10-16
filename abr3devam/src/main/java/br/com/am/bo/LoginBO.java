@@ -1,12 +1,12 @@
 package br.com.am.bo;
 
-import br.com.am.dao.LoginDAO;
-import br.com.am.entities.Login;
+import br.com.am.dao.AlunoDAO;
+import br.com.am.entities.Aluno;
 
 public class LoginBO {
 
 	
-	public Login validarUser(String rm, String senha)throws Exception {
-		return new LoginDAO().consultarUser(rm, senha );
+	public Aluno LogarAluno(String rm, String senha)throws Exception {
+		return new AlunoDAO().consultarLogin(rm, senha);
 	}
 }

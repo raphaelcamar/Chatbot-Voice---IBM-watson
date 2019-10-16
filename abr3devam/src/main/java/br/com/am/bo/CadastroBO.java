@@ -9,14 +9,7 @@ import br.com.am.entities.UserExistente;
 public class CadastroBO {
 
 	public boolean validarNome(String nome) {
-//		for (int i = 0; i < nome.length(); i++) {
-//			if (!Character.isAlphabetic(nome.charAt(i))) {
-//				return false;
-//			}
-//			if (nome.contains(" ")) {
-//				return false;
-//			}
-//		}
+
 		if (nome.length() > 30 || nome.length() < 2) {
 			return false;
 		}
@@ -45,10 +38,8 @@ public class CadastroBO {
 		if (sobrenome.length() > 40 || sobrenome.length() < 2) {
 			return false;
 		}
-
 		return true;
 	}
-
 	public boolean validarRM(String rm) {
 		for (int i = 0; i < rm.length(); i++) {
 			if (!Character.isDigit(rm.charAt(i))) {
@@ -60,7 +51,7 @@ public class CadastroBO {
 		}
 		return true;
 	}
-
+	
 	public boolean validarRespostaSeguranca(String resposta) {
 		if (resposta.length() > 50 || resposta.length() < 2) {
 			return false;
@@ -70,7 +61,7 @@ public class CadastroBO {
 		}
 		return true;
 	}
-
+	
 	public boolean validarEmail(String email) {
 		if (!email.contains("@") || !email.contains(".")) {
 			return false;

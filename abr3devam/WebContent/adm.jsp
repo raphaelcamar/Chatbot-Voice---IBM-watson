@@ -4,19 +4,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="img/favicon.ico">
 <link rel="stylesheet" href="style/adm.css">
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Página do administrador</title>
 </head>
 <body>
 <c:choose>
 		<c:when test="${logado != null}">
 <header>
-	<h1>LOG DE ACESSOS</h1>
-	<a href="index.jsp">Tela de usuário</a>
-	<a href="logout">Sair</a>
+		<a href="index.jsp">Tela de usuário</a>
+		<a href="#disciplinas">Disciplinas</a>
+		<a href="#portugues">Português</a>
+		<a href="#matematica">Matemática</a>
+		<a href="#algoritmo">Algoritmo</a>
+		<a href="#alunos">Cadastros</a>
+		<a href="logout">Sair</a>
 	</header>
-		<div class="container">
+	<h1>LOG DE ACESSOS</h1>
+	
+		<div class="container" id="disciplinas">
 				<p class="titulo-tabela">Disciplinas</p>
 			<table>
 				<thead>
@@ -37,9 +44,9 @@
 			</tbody>
 			</table>
 		</div>
-		<div class="container">
+		<div class="container" id="portugues">
 	<p class="titulo-tabela"><strong>Português</strong></p>
-<table cellpadding="0" cellspacing="0" border="0">
+<table>
 		<thead>
 	<tr>
 		<td class="title-table">Capítulo</td>
@@ -60,9 +67,9 @@
 </tbody>	
 </table>
 </div>
-<div class="container">
+<div class="container" id="matematica">
 <p class="titulo-tabela"><strong>Matemática</strong></p>
-<table cellpadding="0" cellspacing="0" border="0">
+<table>
 	<thead>
 		<tr>
 			<td class="title-table">Capítulo</td>
@@ -83,7 +90,7 @@
 	</tbody>	
 	</table>
 </div>
-<div class="container">
+<div class="container" id="algoritmo">
 	<p class="titulo-tabela"><strong>Algoritmo</strong></p>
 	<table>
 		<thead>
@@ -106,7 +113,7 @@
 		</tbody>	
 		</table>
 	</div>
-	<div class="container">
+	<div class="container" id="alunos">
 				<p class="titulo-tabela">Alunos cadastrados</p>
 			<table>
 				<thead>

@@ -20,70 +20,46 @@ import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
 
 @WebServlet(urlPatterns = "/assistant")
-public class AssistantServlet extends HttpServlet{
+public class AssistantServlet extends HttpServlet {
 
 	private MessageContext context = new MessageContext();
 	private static final long serialVersionUID = 9052436307776407283L;
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String msg = req.getParameter("question");
 		System.out.println(msg);
-		
+
 		MessageResponse response = this.assistantAPICall(msg);
-		
+
 		resp.setContentType("application/json");
 		resp.getWriter().write(new Gson().toJson(response.getOutput().getGeneric()));
-	
+
 	}
 
 	private MessageResponse assistantAPICall(String msg) {
-		
-		
-		IamOptions options = new IamOptions.Builder()
-				.apiKey("Zfq-xWeBOS5zkYvfFVdCTbxra63EQIP6BpropO9ydZDR")
-				.build();
-	
+
+		IamOptions options = new IamOptions.Builder().apiKey("Zfq-xWeBOS5zkYvfFVdCTbxra63EQIP6BpropO9ydZDR").build();
+
 		Assistant service = new Assistant("2019-02-28", options);
 		String assistantId = "51cc9a53-49d6-4dd9-9341-43682422eed0";
-		
-		CreateSessionOptions sessionOptions = new CreateSessionOptions.Builder()
-				.assistantId(assistantId)
-				.build();
-		SessionResponse session = service.createSession(sessionOptions)
-				.execute()
-				.getResult();
+
+		CreateSessionOptions sessionOptions = new CreateSessionOptions.Builder().assistantId(assistantId).build();
+		SessionResponse session = service.createSession(sessionOptions).execute().getResult();
 		String sessionId = session.getSessionId();
-		
+
 		MessageInputOptions inputOptions = new MessageInputOptions();
 		inputOptions.setReturnContext(true);
-		
-		MessageInput input = new MessageInput.Builder()
-				.text(msg)
-				.options(inputOptions)
-				.build();
-		
-		MessageOptions optionsMessage = new MessageOptions.Builder()
-				.assistantId(assistantId)
-				.sessionId(sessionId)
-				.input(input)
-				.context(this.context)
-				.build();
-		
-		MessageResponse response = service.message(optionsMessage)
-				.execute()
-				.getResult();
-		
+
+		MessageInput input = new MessageInput.Builder().text(msg).options(inputOptions).build();
+
+		MessageOptions optionsMessage = new MessageOptions.Builder().assistantId(assistantId).sessionId(sessionId)
+				.input(input).context(this.context).build();
+
+		MessageResponse response = service.message(optionsMessage).execute().getResult();
+
 		this.context = response.getContext();
-		
+
 		return response;
 	}
-
 }
-
-
-
-
-
-
-

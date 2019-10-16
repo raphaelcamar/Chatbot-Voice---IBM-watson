@@ -15,7 +15,7 @@ public class Rseguranca {
 		Rseguranca = rseguranca;
 
 	}
-	
+
 	public int getId_respostaSeg() {
 		return id_respostaSeg;
 	}

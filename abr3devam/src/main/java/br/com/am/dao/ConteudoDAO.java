@@ -25,22 +25,19 @@ public class ConteudoDAO {
 		con.close();
 	}
 	
-	//retornar o id da matéria, para adcionar o contador
-	public int retornarContadorMateria(int disciplina)throws Exception{
+	public int retornarContadorDisciplina(int disciplina)throws Exception{
 		int cont = -1;
 		stmt = con.prepareStatement("SELECT CONTADOR_DE_ACESSO FROM DISCIPLINA where ID_DISCIPLINA =?");
 			stmt.setInt(1, disciplina);
-			
-			rs = stmt.executeQuery();
-	
-			if(rs.next()) {
-				int contM = rs.getInt("CONTADOR_DE_ACESSO");
+				rs = stmt.executeQuery();
+					if(rs.next()) {
+							int contM = rs.getInt("CONTADOR_DE_ACESSO");
 					cont = contM;
 			}
 				return cont;
 	}
-	//adciona mais um(1), no contador quando o método for chamado.
-	public int contadorDisciplina(int cont, int disciplina)throws Exception{
+	
+	public int atualizarcontadorDisciplina(int cont, int disciplina)throws Exception{
 		cont += 1;
 		stmt = con.prepareStatement("UPDATE DISCIPLINA SET CONTADOR_DE_ACESSO =? where ID_DISCIPLINA=?");
 			stmt.setInt(1, cont);
@@ -49,8 +46,7 @@ public class ConteudoDAO {
 		return stmt.executeUpdate();
 	}
 
-	
-	public int ContadorMateria(int id)throws Exception{
+	public int retornarContadorMateria(int id)throws Exception{
 		int cont = -1;
 		
 		stmt = con.prepareStatement("SELECT CONTADOR_DE_ACESSO FROM MATERIA WHERE ID_MATERIA=?");
@@ -64,21 +60,18 @@ public class ConteudoDAO {
 	return cont;
 	}
 	
-	public int atualizarContadorMateria(int contador, int idDisc)throws Exception{
+	public int atualizarContadorMateria(int contador, int idM)throws Exception{
 		contador +=1;
 		stmt = con.prepareStatement("UPDATE MATERIA SET CONTADOR_DE_ACESSO=? WHERE ID_MATERIA=?");
-		
-		stmt.setInt(1, contador);
-		stmt.setInt(2, idDisc);
-		
-		return stmt.executeUpdate();
+			stmt.setInt(1, contador);
+				stmt.setInt(2, idM);
+					return stmt.executeUpdate();
 	}
 	
 	public List<Disciplina> consultarEntradasDisciplina()throws Exception{
 		List <Disciplina> dis = new ArrayList<Disciplina>();
-		
-		stmt = con.prepareStatement("SELECT * FROM DISCIPLINA");
-		rs = stmt.executeQuery();
+			stmt = con.prepareStatement("SELECT * FROM DISCIPLINA");
+				rs = stmt.executeQuery();
 		
 		while(rs.next()) {
 			int id_disciplina = rs.getInt("ID_DISCIPLINA");
@@ -102,27 +95,24 @@ public class ConteudoDAO {
 			
 			while(rs.next()) {
 				int capitulo = rs.getInt("ID_CAPITULO");
-				String descricao = rs.getString("DESCRICAO");
-				int contador_de_acesso = rs.getInt("CONTADOR_DE_ACESSO");
-				String desc = rs.getString("NOME");
-				
+					int contador_de_acesso = rs.getInt("CONTADOR_DE_ACESSO");
+						String descricao = rs.getString("DESCRICAO");
+							String desc = rs.getString("NOME");
 				Materia mat = new Materia(capitulo, descricao, contador_de_acesso,desc);
 				cont.add(mat);
 			}
 			return cont;
-		
 	}
+	
 	public List<Aluno> consultarAlunos()throws Exception{
 		List<Aluno> alunos = new ArrayList<Aluno>();
 			stmt = con.prepareStatement("select * from CHATBOT_ALUNO");
-			rs = stmt.executeQuery();
-			
+				rs = stmt.executeQuery();
 			while(rs.next()) {
 				String nome = rs.getString("NOME");
-				String sobrenome = rs.getString("SOBRENOME");
-				String rm = rs.getString("RM");
-				String email = rs.getString("EMAIL");
-				
+					String sobrenome = rs.getString("SOBRENOME");
+						String rm = rs.getString("RM");
+							String email = rs.getString("EMAIL");
 				Aluno aluno = new Aluno(0, nome, sobrenome, null, rm, email,null);
 				alunos.add(aluno);
 			}

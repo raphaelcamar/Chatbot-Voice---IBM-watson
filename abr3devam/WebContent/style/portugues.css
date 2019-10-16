@@ -56,10 +56,20 @@ justify-content:space-around;
 .conteudo p{
   color:black;
 }
-
 button{
-  background:blue;
-  color:white;
+	padding:15px 30px;
+	border-radius:5px;
+	background-color:white;
+	color:black;
+	border-width:thin;
+	border-style:solid;
+	border-color:black;
+}
+button:hover{
+	cursor:pointer;
+	background-color:black;
+	color:white;
+	transition:all ease 0.5s;
 }
 @media screen and (max-width:768px){
     .container{
@@ -70,5 +80,4 @@ button{
     	width:80%;
     	margin-left:10%;
     }
-
 }

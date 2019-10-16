@@ -23,31 +23,23 @@ public class TextToSpeechServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String msg = req.getParameter("question");
-		
-		IamOptions options = new IamOptions.Builder()
-				.apiKey("N5U8jjGYywKimljIHDWCu0SH1mpJru3eP3BzFTDLVXUg")
-				.build();
-		
+
+		IamOptions options = new IamOptions.Builder().apiKey("N5U8jjGYywKimljIHDWCu0SH1mpJru3eP3BzFTDLVXUg").build();
+
 		TextToSpeech service = new TextToSpeech(options);
-		
-		SynthesizeOptions sOptions = new SynthesizeOptions.Builder()
-				.text(msg)
-				.accept("audio/wav")
-				.voice("pt-BR_IsabelaV3Voice")
-				.build();
-		
-		InputStream is = service.synthesize(sOptions)
-				.execute()
-				.getResult();
+
+		SynthesizeOptions sOptions = new SynthesizeOptions.Builder().text(msg).accept("audio/wav")
+				.voice("pt-BR_IsabelaV3Voice").build();
+
+		InputStream is = service.synthesize(sOptions).execute().getResult();
 		InputStream in = WaveUtils.reWriteWaveHeader(is);
-		
+
 		byte[] buffer = new byte[1024 * 1024];
-		try(OutputStream os = resp.getOutputStream()) {
+		try (OutputStream os = resp.getOutputStream()) {
 			int length;
-			while((length = in.read(buffer)) != -1) {
+			while ((length = in.read(buffer)) != -1) {
 				os.write(buffer, 0, length);
 			}
 		}
-		
 	}
 }

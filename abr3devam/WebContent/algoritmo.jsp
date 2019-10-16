@@ -17,7 +17,7 @@
 <c:choose>
 	<c:when test="${logado != null }"> 
      <header>
-        <p>Português</p>
+        <p>Algoritmo</p>
         <p><a href="index.jsp">Fiap EAD</a></p>
         <p><a href="logout">Sair</a></p>
     </header>

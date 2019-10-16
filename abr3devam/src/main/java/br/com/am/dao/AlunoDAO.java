@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import br.com.am.conexao.Conexao;
 import br.com.am.entities.Aluno;
+
 import br.com.am.entities.Rseguranca;
 import br.com.am.entities.UserExistente;
 
@@ -31,7 +32,7 @@ public class AlunoDAO {
 		stmt.setString(3, c.getSenha());
 		stmt.setString(4, c.getRm());
 		stmt.setString(5, c.getEmail());
-
+		
 		return stmt.executeUpdate();
 	}
 
@@ -42,40 +43,54 @@ public class AlunoDAO {
 		stmt = con.prepareStatement(add2);
 		stmt.setString(1, r.getRseguranca().toUpperCase());
 		return stmt.executeUpdate();
-
 	}
 
 	public UserExistente VerificarRm(String rm) throws Exception {
 		UserExistente ue = null;
 
 		stmt = con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE RM =?");
-
-		stmt.setString(1, rm);
-
-		rs = stmt.executeQuery();
+			stmt.setString(1, rm);
+				rs = stmt.executeQuery();
 
 		if (rs.next()) {
 			String rm2 = rs.getString("RM");
 			String email2 = rs.getString("EMAIL");
 			ue = new UserExistente(rm2, email2);
 		}
-
 		return ue;
 	}
 
 	public UserExistente verificarEmail(String email) throws Exception {
 		UserExistente ue = null;
 		stmt = con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE EMAIL =?");
-		stmt.setString(1, email);
-
-		rs = stmt.executeQuery();
-
+			stmt.setString(1, email);
+				rs = stmt.executeQuery();
+				
 		if (rs.next()) {
 			String email2 = rs.getString("EMAIL");
 			String rm = rs.getString("RM");
 			ue = new UserExistente(rm, email2);
 		}
 		return ue;
+	}
+	
+	public Aluno consultarLogin(String rm, String senha)throws Exception {
+		Aluno a = null;
+		stmt = con.prepareStatement("SELECT * FROM CHATBOT_ALUNO WHERE RM = ? AND SENHA = ?");
+			stmt.setString(1, rm);
+				stmt.setString(2, senha);
+
+		rs = stmt.executeQuery();
+		if(rs.next()) {
+			int id = rs.getInt("ID_ALUNO");
+			String nome = rs.getString("NOME");
+			String sobrenome = rs.getString("SOBRENOME");
+			String rmL = rs.getString("RM");
+			String email = rs.getString("EMAIL");
+			String senhaL = rs.getString("SENHA");
+			a = new Aluno(id, nome, sobrenome, rmL, email, senhaL, null);
+		}
+		return a;
 	}
 
 }

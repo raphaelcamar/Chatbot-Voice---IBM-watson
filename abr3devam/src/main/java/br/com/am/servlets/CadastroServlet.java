@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.co.am.excecoes.Excecao;
 import br.com.am.bo.CadastroBO;
 import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.Aluno;
 import br.com.am.entities.Rseguranca;
 import br.com.am.entities.UserExistente;
+import br.com.am.excecoes.Excecao;
 
 @WebServlet(urlPatterns = "/cadastrar")
 public class CadastroServlet extends HttpServlet {
@@ -25,18 +25,18 @@ public class CadastroServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Aluno c = new Aluno();
-			Rseguranca r = new Rseguranca();
+		Rseguranca r = new Rseguranca();
 
 		r.setRseguranca(req.getParameter("rSeguranca").toUpperCase());
-		
+
 		c.setNome(req.getParameter("nome").toUpperCase());
-		
+
 		c.setSobrenome(req.getParameter("sobrenome").toUpperCase());
-		
+
 		c.setEmail(req.getParameter("email").toUpperCase());
-		
+
 		c.setRm(req.getParameter("rm").toUpperCase());
-		
+
 		c.setSenha(req.getParameter("senha").toUpperCase());
 
 		AlunoDAO dao = null;
@@ -78,15 +78,15 @@ public class CadastroServlet extends HttpServlet {
 				req.setAttribute("erro", erro);
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher("cadastro.jsp");
-					dispatcher.forward(req, resp);
-				
-			} else if (bo.validarNome(c.getNome()) && bo.validarEmail(c.getEmail())
-					&& bo.validarRM(c.getRm()) && bo.validarSenha(c.getSenha())) {
+				dispatcher.forward(req, resp);
+
+			} else if (bo.validarNome(c.getNome()) && bo.validarEmail(c.getEmail()) && bo.validarRM(c.getRm())
+					&& bo.validarSenha(c.getSenha())) {
 				dao.adcionarAluno(c);
-					dao.adcionarResposta(r);
+				dao.adcionarResposta(r);
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
-					dispatcher.forward(req, resp);
+				dispatcher.forward(req, resp);
 
 			}
 		} catch (Exception e) {
@@ -101,5 +101,4 @@ public class CadastroServlet extends HttpServlet {
 			}
 		}
 	}
-
 }
