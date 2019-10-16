@@ -23,7 +23,6 @@
 	<c:choose>
 		<c:when test="${logado != null }">
 			<header>
-
 				<p class="opcao">
 					<a href="https://www2.fiap.com.br/"> Portal do aluno</a>
 				</p>
@@ -36,34 +35,34 @@
 				</p>
 
 			</header>
-			
+			<form action="disciplina" method="post">
 			<div class="container">
 				<div class="algoritmo">
 					<img src="img/algoritmo.jpg">
 					<h5 class="name">Algoritimo</h5>
 					<p class="desc">EAD focado em oferecer apoio à matéria de
 						algoritmos</p>
-					<a href="#" class="unavailable">Conteúdo</a>
+					<button name="valorConteudo" value="1">Conteúdo</button>
+					
 				</div>
 				<div class="portugues">
 					<img src="img/portugues.jpg">
 					<h5 class="name">Português</h5>
 					<p class="desc">EAD focado em passar conhecimentos na área de
 						negócios</p>
-					<a href="portugues.jsp">Conteúdo</a>
+					<button name="valorConteudo" value="2">Conteúdo</button>
 				</div>
 				<div class="matematica">
 					<img src="img/mat.jpg" class="card-img-top">
 					<h5 class="name">Matemática</h5>
 					<p class="desc">EAD focado em fortalecer alguns conceitos
 						matemáticos</p>
-					<a href="#" class="unavailable">Conteúdo</a>
+					<button name="valorConteudo" value="3">Conteúdo</button>
 				</div>
 			</div>
-			<script src="script/EnviarQ.js"></script>
-			<script src="script/index.js"></script>
+		</form>
+			
 		</c:when>
-
 		<c:otherwise>
 			<div class="n-logado">
 				<p>Você não possui cadastro!</p>
@@ -73,5 +72,7 @@
 			</div>
 		</c:otherwise>
 	</c:choose>
+	<script src="script/EnviarQ.js"></script>
+			<script src="script/index.js"></script>
 </body>
 </html>

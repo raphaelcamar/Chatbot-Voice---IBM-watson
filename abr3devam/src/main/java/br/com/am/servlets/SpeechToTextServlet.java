@@ -55,6 +55,5 @@ public class SpeechToTextServlet extends HttpServlet {
 		
 		resp.setContentType("application/json");
 		resp.getWriter().write(new Gson().toJson(transcript.getResults()));
-	
 	}
 }
