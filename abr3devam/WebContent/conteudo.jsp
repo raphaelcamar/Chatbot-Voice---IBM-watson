@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<c:choose>
-	<c:when test="${logado != null }">
+
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<meta charset="utf-8">
 		<title>Conceito Startup</title>
 		<link rel="stylesheet" href="style/portPdf.css">
 </head>
-
+<c:choose>
+	<c:when test="${logado != null }">
 <body>
 	<div class="iframe">
 		<iframe src="startup.pdf" width="100%" height="100%"> </iframe>

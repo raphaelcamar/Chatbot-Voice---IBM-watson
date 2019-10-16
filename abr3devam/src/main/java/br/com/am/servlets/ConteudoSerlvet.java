@@ -21,18 +21,15 @@ public class ConteudoSerlvet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		String valor = req.getParameter("submit");
-		String materia = req.getParameter("materia");
+			int id_conteudo = Integer.parseInt(valor);
 		ConteudoDAO dao = null;
 		try {
-			int v = Integer.parseInt(materia);
-			System.out.println(materia);
-			int idCapitulo = Integer.parseInt(valor);
-				dao = new ConteudoDAO();
-				int contador = dao.ContadorMateria(idCapitulo, v);
-				dao.atualizarContadorMateria(contador, idCapitulo);
-				RequestDispatcher dispatcher = req.getRequestDispatcher("conteudo.jsp");
-				dispatcher.forward(req, resp);
-					
+			dao = new ConteudoDAO();
+			
+			int cont = dao.ContadorMateria(id_conteudo);
+				dao.atualizarContadorMateria(cont, id_conteudo);
+					RequestDispatcher dispatcher = req.getRequestDispatcher("conteudo.jsp");
+						dispatcher.forward(req, resp);
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {

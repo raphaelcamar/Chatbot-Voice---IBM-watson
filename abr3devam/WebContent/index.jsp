@@ -63,7 +63,6 @@
 		</form>
 			
 		</c:when>
-
 		<c:otherwise>
 			<div class="n-logado">
 				<p>Você não possui cadastro!</p>
