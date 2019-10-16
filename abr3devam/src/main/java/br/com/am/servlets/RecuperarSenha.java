@@ -9,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import br.co.am.excecoes.Excecao;
 import br.com.am.bo.CadastroBO;
 import br.com.am.dao.RecuperarSenhaDAO;
 
@@ -57,14 +57,15 @@ public class RecuperarSenha extends HttpServlet{
 			 		RequestDispatcher dispatcher = req.getRequestDispatcher("recuperarSenha.jsp");
 			 			dispatcher.forward(req, resp);
 	}catch(Exception e){
-			e.printStackTrace();
+			new Excecao("O processo de recuperação de senha não foi completo.");
+			new Excecao(e);
 			System.out.println("O processo de recuperação de senha não foi completo.");
 		}finally {
 			try {
 				rsenha.encerrar();
 			}catch(Exception e){
-				e.printStackTrace();
-				System.out.println("O banco não foi encerrado");
+				new Excecao("Banco não encerrado");
+				new Excecao(e);
 			}
 		}
 		

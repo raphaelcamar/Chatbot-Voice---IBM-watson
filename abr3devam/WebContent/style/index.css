@@ -62,21 +62,6 @@ img{
 	border-radius: 5px;
 	font-family: 'Roboto Condensed', sans-serif;
 }
-.container a{
-	text-decoration:none;
-	border-style:solid;
-	border-width:thin;
-	border-color:black;
-	padding:10px;
-	background-color:white;;
-	color:black;
-	transition:all 0.5s cubic-bezier(0, 1.01, 1, 1.03);
-}
-.container a:hover{
-	text-decoration:underline;
-	background-color:black;
-	color:white;
-}
 #nome{
 	color:#ffffff;
 	font-size: 35px;
@@ -97,6 +82,21 @@ img{
 	cursor:default;
 	transition:none;
 	border-color:#444241de;
+}
+button{
+	padding:15px;
+	border-radius:5px;
+	background-color:white;
+	color:black;
+	border-width:thin;
+	border-style:solid;
+	border-color:black;
+}
+button:hover{
+	cursor:pointer;
+	background-color:black;
+	color:white;
+	transition:all ease 0.5s;
 }
 @media screen and (max-width:768px){
 		.container{

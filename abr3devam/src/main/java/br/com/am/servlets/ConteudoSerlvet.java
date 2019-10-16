@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.co.am.excecoes.Excecao;
 import br.com.am.dao.ConteudoDAO;
 
 
@@ -31,12 +32,14 @@ public class ConteudoSerlvet extends HttpServlet{
 					RequestDispatcher dispatcher = req.getRequestDispatcher("conteudo.jsp");
 						dispatcher.forward(req, resp);
 		}catch(Exception e){
-			e.printStackTrace();
+			new Excecao("Não conseguiu atualizar o contador de acesso");
+			new Excecao(e);
 		}finally {
 			try {
 				dao.encerrar();
 			}catch(Exception e) {
-				e.printStackTrace();
+			new Excecao("Não conseguiu finalizar o banco");
+			new Excecao(e);
 			}
 		}
 		

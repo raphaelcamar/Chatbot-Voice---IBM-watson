@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.am.conexao.Conexao;
-import br.com.am.entities.Materia;
+import br.com.am.entities.Aluno;
 import br.com.am.entities.Disciplina;
+import br.com.am.entities.Materia;
 
 public class ConteudoDAO {
 
@@ -109,6 +110,22 @@ public class ConteudoDAO {
 				cont.add(mat);
 			}
 			return cont;
+		
+	}
+	public List<Aluno> consultarAlunos()throws Exception{
+		List<Aluno> alunos = new ArrayList<Aluno>();
+			stmt = con.prepareStatement("select * from CHATBOT_ALUNO");
+			rs = stmt.executeQuery();
 			
+			while(rs.next()) {
+				String nome = rs.getString("NOME");
+				String sobrenome = rs.getString("SOBRENOME");
+				String rm = rs.getString("RM");
+				String email = rs.getString("EMAIL");
+				
+				Aluno aluno = new Aluno(0, nome, sobrenome, null, rm, email,null);
+				alunos.add(aluno);
+			}
+			return alunos;	
 	}
 }

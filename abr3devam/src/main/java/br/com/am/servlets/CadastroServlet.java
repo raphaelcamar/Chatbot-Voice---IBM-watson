@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.co.am.excecoes.Excecao;
 import br.com.am.bo.CadastroBO;
 import br.com.am.dao.AlunoDAO;
 import br.com.am.entities.Aluno;
@@ -89,14 +90,14 @@ public class CadastroServlet extends HttpServlet {
 
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("não guardou no banco");
+			new Excecao("Não foi cadastrado.");
+			new Excecao(e);
 		} finally {
 			try {
 				dao.encerrar();
 			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("não conseguiu encerrar!");
+				new Excecao("O banco não conseguiu finalizar");
+				new Excecao(e);
 			}
 		}
 	}

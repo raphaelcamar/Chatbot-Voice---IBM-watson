@@ -1,13 +1,12 @@
 package br.com.am.servlets;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import br.co.am.excecoes.Excecao;
 
 
 @WebServlet(urlPatterns = "/logout")
@@ -22,8 +21,8 @@ public class LogoutServlet extends HttpServlet{
 		try {
 			req.getRequestDispatcher("login.jsp").forward(req, resp);
 		}catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("O usuário não teve sua sessão finalizada");
+			new Excecao("O usuário não foi deslogado");
+			new Excecao(e);
 		}
 		
 	}
