@@ -10,7 +10,24 @@ import br.com.am.conexao.Conexao;
 import br.com.am.entities.Aluno;
 import br.com.am.entities.Disciplina;
 import br.com.am.entities.Materia;
-
+/**
+ * Esta classe é responsável por realizar o SELECT e UPDATE nas tabelas
+ * CHATBOT_ALUNO e CHATBOT_RESPOSTA_SEG. É importante utilizar o método encerrar
+ * para fechar conexão com o banco de dados.
+ * 
+ * @author André Kancelskis
+ * @author Átila Ferreira
+ * @author Jhonata Morais
+ * @author Raphael Molina
+ * @author Raphael Santantonio
+ * @see br.com.am.conexao.Conexao
+ * @see br.com.am.entities.Aluno
+ * @see br.com.am.entities.Disciplina
+ * @see br.com.am.entities.Materia
+ * @version 1.00
+ * @since 1.00
+ *
+ */
 public class ConteudoDAO {
 
 	private Connection con;
