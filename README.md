@@ -5,7 +5,6 @@ Nome do projeto:
 βet@
 
 
-
 Objetivo principal do projeto:
 
 Com o objetivo de deixar os conhecimentos básicos do corpo discente mais homogêneo, esse 
@@ -18,6 +17,7 @@ Tecnologias utilizadas:
 HTML5
 
 CSS3
+
 JAVASCRIPT
 
 JAVA
@@ -31,6 +31,8 @@ JSON
 JSTL
 
 SQLDEVELOPER
+
+
 
 Nomes e RMs:
 
