@@ -1,9 +1,9 @@
 AM 2° semestre pela FIAP
 
 Nome do projeto:
-
 βet@
 
+![BetaLogo](https://raw.githubusercontent.com/raphaelcamar/Chatbot-Voice---IBM-watson/master/abr3devam/WebContent/img/imgLogo.png)
 
 Objetivo principal do projeto:
 
@@ -14,23 +14,23 @@ maximizar a efetividade do sistema de nivelamento.
 
 Tecnologias utilizadas:
 
-HTML5
+- HTML5
 
-CSS3
+- CSS3
 
-JAVASCRIPT
+- JAVASCRIPT
 
-JAVA
+- JAVA
 
-SERVLETS
+- SERVLETS
 
-JSP
+- JSP
 
-JSON
+- JSON
 
-JSTL
+- JSTL
 
-SQLDEVELOPER
+- SQLDEVELOPER
 
 
 
