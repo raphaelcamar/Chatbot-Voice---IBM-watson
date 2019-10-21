@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import br.com.am.conexao.Conexao;
+
 /**
  * Esta classe é responsável por realizar o SELECT e UPDATE nas tabelas
  * CHATBOT_ALUNO e CHATBOT_RESPOSTA_SEG. É importante utilizar o método encerrar
@@ -24,6 +25,7 @@ public class RecuperarSenhaDAO {
 	private Connection con;
 	private PreparedStatement stmt;
 	private ResultSet rs;
+
 	/**
 	 * O método construtor é responsável por abrir a conexão
 	 * 
@@ -38,6 +40,7 @@ public class RecuperarSenhaDAO {
 	public RecuperarSenhaDAO() throws Exception {
 		con = Conexao.produtoConexao();
 	}
+
 	/**
 	 * Esse método é responsável por fechar a conexão
 	 * 
@@ -52,9 +55,10 @@ public class RecuperarSenhaDAO {
 	public void encerrar() throws Exception {
 		con.close();
 	}
+
 	/**
-	 * Este método está retornando a resposta de segurança, utilizando o email do aluno, 
-	 * selecionando nas tabelas CHATBOT_ALUNO e HATBOT_RESPOSTA_SEG
+	 * Este método está retornando a resposta de segurança, utilizando o email do
+	 * aluno, selecionando nas tabelas CHATBOT_ALUNO e CHATBOT_RESPOSTA_SEG
 	 * 
 	 * @param email
 	 * @return resposta
@@ -77,9 +81,10 @@ public class RecuperarSenhaDAO {
 		}
 		return resposta;
 	}
+
 	/**
-	 * Este método está retornando o id, utilizando o email do aluno,
-	 * selecionando na tabela CHATBOT_ALUNO
+	 * Este método está retornando o id, utilizando o email do aluno, selecionando
+	 * na tabela CHATBOT_ALUNO
 	 * 
 	 * @param email
 	 * @return id
@@ -101,11 +106,12 @@ public class RecuperarSenhaDAO {
 		}
 		return id;
 	}
+
 	/**
 	 * Este método está atualizando a senha do aluno na tabela CHATBOT_ALUNO
 	 * 
 	 * @param id, senha
-	 * @return 
+	 * @return
 	 * @throws Exception
 	 * @author André Kancelskis
 	 * @author Átila Ferreira
