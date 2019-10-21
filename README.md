@@ -1,5 +1,3 @@
-AM 2° semestre pela FIAP
-
 <h1>Nome do projeto: βet@</h1>
 
 ![BetaLogo](https://raw.githubusercontent.com/raphaelcamar/Chatbot-Voice---IBM-watson/master/abr3devam/WebContent/img/imgLogo.png)
