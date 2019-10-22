@@ -1,0 +1,6 @@
+﻿Funcionalidades:
+SELECT: funcionalidade desenvolvida especificamente para selecionar no banco de dados os dados requeridos pelo sistema.
+O SELECT é encontrado no pacote br.com.am.dao.
+
+UPDATE: funcionalidade desenvolvida especificamente para atualizar no banco de dados os dados informados pelo usuário, passando pela validação de senha.
+O UPDATE é encontrado no pacote br.com.am.dao.
