@@ -4,3 +4,5 @@ O SELECT é encontrado no pacote br.com.am.dao.
 
 UPDATE: funcionalidade desenvolvida especificamente para atualizar no banco de dados os dados informados pelo usuário, passando pela validação de senha.
 O UPDATE é encontrado no pacote br.com.am.dao.
+
+Acesso de Administrador ao sistema. RM: 12345 SENHA: 123456
