@@ -5,7 +5,7 @@
 **Objetivo principal do projeto:**
 
 Com o objetivo de deixar os conhecimentos básicos do corpo discente mais homogêneo, esse 
-sistema é disponibilizado a todos alunos de graduação com o intuido de sanar suas dúvidas. 
+sistema é disponibilizado a todos alunos de graduação com o intuito de sanar suas dúvidas. 
 Dado este conceito, criamos de um sistema de solução de dúvidas, nesse caso, um chatbot por voz, para 
 maximizar a efetividade do sistema de nivelamento.
 
